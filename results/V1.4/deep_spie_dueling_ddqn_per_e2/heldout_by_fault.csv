@@ -1,0 +1,5 @@
+fault,heldout_success_by_fault
+ANALYZER_BIAS,0.0
+HEATER_SWAP,0.0
+NONE,0.0
+PURIFIER_LEAK,0.0

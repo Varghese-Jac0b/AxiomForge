@@ -1,0 +1,84 @@
+
+=== v1_1/spie_q seed 0 (demo_configs=16, deep=False) ===
+[v1_1/spie_q] seed 0 | ep   300/3000 | eps=0.074 beta=0.370 | train_succ=1.00 heldout_succ=0.00 | q=2954
+[v1_1/spie_q] seed 0 | ep   600/3000 | eps=0.055 beta=0.274 | train_succ=1.00 heldout_succ=0.00 | q=3702
+[v1_1/spie_q] seed 0 | ep   900/3000 | eps=0.050 beta=0.203 | train_succ=1.00 heldout_succ=0.00 | q=4246
+[v1_1/spie_q] seed 0 | ep  1200/3000 | eps=0.050 beta=0.151 | train_succ=1.00 heldout_succ=0.00 | q=4643
+[v1_1/spie_q] seed 0 | ep  1500/3000 | eps=0.050 beta=0.111 | train_succ=1.00 heldout_succ=0.00 | q=5042
+[v1_1/spie_q] seed 0 | ep  1800/3000 | eps=0.050 beta=0.083 | train_succ=1.00 heldout_succ=0.00 | q=5368
+[v1_1/spie_q] seed 0 | ep  2100/3000 | eps=0.050 beta=0.061 | train_succ=1.00 heldout_succ=0.00 | q=5742
+[v1_1/spie_q] seed 0 | ep  2400/3000 | eps=0.050 beta=0.045 | train_succ=1.00 heldout_succ=0.00 | q=6217
+[v1_1/spie_q] seed 0 | ep  2700/3000 | eps=0.050 beta=0.034 | train_succ=1.00 heldout_succ=0.00 | q=6777
+[v1_1/spie_q] seed 0 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=1.00 heldout_succ=0.00 | q=7317
+seed 0 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+=== v1_1/spie_q seed 1 (demo_configs=16, deep=False) ===
+[v1_1/spie_q] seed 1 | ep   300/3000 | eps=0.074 beta=0.370 | train_succ=1.00 heldout_succ=0.00 | q=2873
+[v1_1/spie_q] seed 1 | ep   600/3000 | eps=0.055 beta=0.274 | train_succ=1.00 heldout_succ=0.00 | q=3615
+[v1_1/spie_q] seed 1 | ep   900/3000 | eps=0.050 beta=0.203 | train_succ=1.00 heldout_succ=0.00 | q=4067
+[v1_1/spie_q] seed 1 | ep  1200/3000 | eps=0.050 beta=0.151 | train_succ=1.00 heldout_succ=0.00 | q=4480
+[v1_1/spie_q] seed 1 | ep  1500/3000 | eps=0.050 beta=0.111 | train_succ=1.00 heldout_succ=0.00 | q=4981
+[v1_1/spie_q] seed 1 | ep  1800/3000 | eps=0.050 beta=0.083 | train_succ=1.00 heldout_succ=0.00 | q=5429
+[v1_1/spie_q] seed 1 | ep  2100/3000 | eps=0.050 beta=0.061 | train_succ=1.00 heldout_succ=0.00 | q=5925
+[v1_1/spie_q] seed 1 | ep  2400/3000 | eps=0.050 beta=0.045 | train_succ=1.00 heldout_succ=0.00 | q=6374
+[v1_1/spie_q] seed 1 | ep  2700/3000 | eps=0.050 beta=0.034 | train_succ=1.00 heldout_succ=0.00 | q=7068
+[v1_1/spie_q] seed 1 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=1.00 heldout_succ=0.00 | q=8229
+seed 1 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+=== v1_1/spie_q seed 2 (demo_configs=16, deep=False) ===
+[v1_1/spie_q] seed 2 | ep   300/3000 | eps=0.074 beta=0.370 | train_succ=1.00 heldout_succ=0.00 | q=3075
+[v1_1/spie_q] seed 2 | ep   600/3000 | eps=0.055 beta=0.274 | train_succ=1.00 heldout_succ=0.00 | q=3958
+[v1_1/spie_q] seed 2 | ep   900/3000 | eps=0.050 beta=0.203 | train_succ=1.00 heldout_succ=0.00 | q=4398
+[v1_1/spie_q] seed 2 | ep  1200/3000 | eps=0.050 beta=0.151 | train_succ=1.00 heldout_succ=0.00 | q=4884
+[v1_1/spie_q] seed 2 | ep  1500/3000 | eps=0.050 beta=0.111 | train_succ=1.00 heldout_succ=0.00 | q=5302
+[v1_1/spie_q] seed 2 | ep  1800/3000 | eps=0.050 beta=0.083 | train_succ=1.00 heldout_succ=0.00 | q=5667
+[v1_1/spie_q] seed 2 | ep  2100/3000 | eps=0.050 beta=0.061 | train_succ=1.00 heldout_succ=0.00 | q=6009
+[v1_1/spie_q] seed 2 | ep  2400/3000 | eps=0.050 beta=0.045 | train_succ=1.00 heldout_succ=0.00 | q=6602
+[v1_1/spie_q] seed 2 | ep  2700/3000 | eps=0.050 beta=0.034 | train_succ=1.00 heldout_succ=0.00 | q=7454
+[v1_1/spie_q] seed 2 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=1.00 heldout_succ=0.00 | q=8163
+seed 2 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+=== v1_1/spie_q seed 3 (demo_configs=16, deep=False) ===
+[v1_1/spie_q] seed 3 | ep   300/3000 | eps=0.074 beta=0.370 | train_succ=0.88 heldout_succ=0.00 | q=3127
+[v1_1/spie_q] seed 3 | ep   600/3000 | eps=0.055 beta=0.274 | train_succ=0.88 heldout_succ=0.00 | q=3761
+[v1_1/spie_q] seed 3 | ep   900/3000 | eps=0.050 beta=0.203 | train_succ=0.88 heldout_succ=0.00 | q=4288
+[v1_1/spie_q] seed 3 | ep  1200/3000 | eps=0.050 beta=0.151 | train_succ=0.88 heldout_succ=0.00 | q=4664
+[v1_1/spie_q] seed 3 | ep  1500/3000 | eps=0.050 beta=0.111 | train_succ=0.88 heldout_succ=0.00 | q=5115
+[v1_1/spie_q] seed 3 | ep  1800/3000 | eps=0.050 beta=0.083 | train_succ=0.88 heldout_succ=0.00 | q=5520
+[v1_1/spie_q] seed 3 | ep  2100/3000 | eps=0.050 beta=0.061 | train_succ=0.88 heldout_succ=0.00 | q=5866
+[v1_1/spie_q] seed 3 | ep  2400/3000 | eps=0.050 beta=0.045 | train_succ=0.88 heldout_succ=0.00 | q=6418
+[v1_1/spie_q] seed 3 | ep  2700/3000 | eps=0.050 beta=0.034 | train_succ=0.88 heldout_succ=0.00 | q=7309
+[v1_1/spie_q] seed 3 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=0.88 heldout_succ=0.00 | q=8090
+seed 3 | train_greedy=0.88 heldout_greedy=0.00 gap=0.88
+
+=== v1_1/spie_q seed 4 (demo_configs=16, deep=False) ===
+[v1_1/spie_q] seed 4 | ep   300/3000 | eps=0.074 beta=0.370 | train_succ=1.00 heldout_succ=0.08 | q=2870
+[v1_1/spie_q] seed 4 | ep   600/3000 | eps=0.055 beta=0.274 | train_succ=1.00 heldout_succ=0.08 | q=3591
+[v1_1/spie_q] seed 4 | ep   900/3000 | eps=0.050 beta=0.203 | train_succ=1.00 heldout_succ=0.08 | q=4058
+[v1_1/spie_q] seed 4 | ep  1200/3000 | eps=0.050 beta=0.151 | train_succ=1.00 heldout_succ=0.08 | q=4479
+[v1_1/spie_q] seed 4 | ep  1500/3000 | eps=0.050 beta=0.111 | train_succ=1.00 heldout_succ=0.08 | q=4978
+[v1_1/spie_q] seed 4 | ep  1800/3000 | eps=0.050 beta=0.083 | train_succ=1.00 heldout_succ=0.08 | q=5389
+[v1_1/spie_q] seed 4 | ep  2100/3000 | eps=0.050 beta=0.061 | train_succ=1.00 heldout_succ=0.08 | q=5794
+[v1_1/spie_q] seed 4 | ep  2400/3000 | eps=0.050 beta=0.045 | train_succ=1.00 heldout_succ=0.08 | q=6369
+[v1_1/spie_q] seed 4 | ep  2700/3000 | eps=0.050 beta=0.034 | train_succ=1.00 heldout_succ=0.08 | q=6951
+[v1_1/spie_q] seed 4 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=1.00 heldout_succ=0.08 | q=7668
+seed 4 | train_greedy=1.00 heldout_greedy=0.08 gap=0.92
+
+========== v1_1/spie_q SUMMARY ==========
+ seed version   algo  train_greedy_success  heldout_greedy_success  generalization_gap  final_train_episode_success  q_table_size  learn_steps
+    0    v1_1 spie_q                 1.000                0.000000            1.000000                         0.85          7317            0
+    1    v1_1 spie_q                 1.000                0.000000            1.000000                         0.75          8229            0
+    2    v1_1 spie_q                 1.000                0.000000            1.000000                         0.76          8163            0
+    3    v1_1 spie_q                 0.875                0.000000            0.875000                         0.74          8090            0
+    4    v1_1 spie_q                 1.000                0.083333            0.916667                         0.83          7668            0
+
+Held-out success by protocol:
+protocol
+P0    0.037
+P1    0.000
+
+Held-out success by fault:
+fault
+NONE    0.017
+
+artifacts -> ./results/full_benchmark/V1.1/spie_q

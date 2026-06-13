@@ -1,0 +1,6 @@
+seed,version,algo,train_greedy_success,heldout_greedy_success,generalization_gap,final_train_episode_success,q_table_size,learn_steps
+0,v1_4,noisy_dueling_ddqn_per,0.6875,0.0,0.6875,1.0,0,20106
+1,v1_4,noisy_dueling_ddqn_per,0.9375,0.0,0.9375,0.97,0,21319
+2,v1_4,noisy_dueling_ddqn_per,0.9375,0.08333333333333333,0.8541666666666666,0.99,0,20487
+3,v1_4,noisy_dueling_ddqn_per,1.0,0.0,1.0,0.96,0,20362
+4,v1_4,noisy_dueling_ddqn_per,0.875,0.0,0.875,0.99,0,20503

@@ -1,0 +1,6 @@
+seed,version,algo,train_greedy_success,heldout_greedy_success,generalization_gap,final_train_episode_success,q_table_size,learn_steps
+0,v1_4,spie_dueling_dqn,0.0,0.0,0.0,0.0,0,96682
+1,v1_4,spie_dueling_dqn,0.0,0.0,0.0,0.0,0,91224
+2,v1_4,spie_dueling_dqn,0.0,0.0,0.0,0.0,0,103658
+3,v1_4,spie_dueling_dqn,0.0,0.0,0.0,0.0,0,99161
+4,v1_4,spie_dueling_dqn,0.0,0.0,0.0,0.0,0,102636

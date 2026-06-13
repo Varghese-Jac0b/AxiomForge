@@ -1,0 +1,85 @@
+
+=== v1_2/q_learning seed 0 (demo_configs=16, deep=False) ===
+[v1_2/q_learning] seed 0 | ep   300/3000 | eps=0.074 beta=0.370 | train_succ=1.00 heldout_succ=0.00 | q=8018
+[v1_2/q_learning] seed 0 | ep   600/3000 | eps=0.055 beta=0.274 | train_succ=1.00 heldout_succ=0.00 | q=12227
+[v1_2/q_learning] seed 0 | ep   900/3000 | eps=0.050 beta=0.203 | train_succ=1.00 heldout_succ=0.00 | q=15115
+[v1_2/q_learning] seed 0 | ep  1200/3000 | eps=0.050 beta=0.151 | train_succ=1.00 heldout_succ=0.00 | q=17728
+[v1_2/q_learning] seed 0 | ep  1500/3000 | eps=0.050 beta=0.111 | train_succ=1.00 heldout_succ=0.00 | q=20065
+[v1_2/q_learning] seed 0 | ep  1800/3000 | eps=0.050 beta=0.083 | train_succ=1.00 heldout_succ=0.00 | q=21941
+[v1_2/q_learning] seed 0 | ep  2100/3000 | eps=0.050 beta=0.061 | train_succ=1.00 heldout_succ=0.00 | q=23741
+[v1_2/q_learning] seed 0 | ep  2400/3000 | eps=0.050 beta=0.045 | train_succ=1.00 heldout_succ=0.00 | q=25227
+[v1_2/q_learning] seed 0 | ep  2700/3000 | eps=0.050 beta=0.034 | train_succ=1.00 heldout_succ=0.00 | q=26463
+[v1_2/q_learning] seed 0 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=1.00 heldout_succ=0.00 | q=28023
+seed 0 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+=== v1_2/q_learning seed 1 (demo_configs=16, deep=False) ===
+[v1_2/q_learning] seed 1 | ep   300/3000 | eps=0.074 beta=0.370 | train_succ=1.00 heldout_succ=0.08 | q=8025
+[v1_2/q_learning] seed 1 | ep   600/3000 | eps=0.055 beta=0.274 | train_succ=1.00 heldout_succ=0.08 | q=11813
+[v1_2/q_learning] seed 1 | ep   900/3000 | eps=0.050 beta=0.203 | train_succ=1.00 heldout_succ=0.08 | q=14081
+[v1_2/q_learning] seed 1 | ep  1200/3000 | eps=0.050 beta=0.151 | train_succ=1.00 heldout_succ=0.08 | q=16995
+[v1_2/q_learning] seed 1 | ep  1500/3000 | eps=0.050 beta=0.111 | train_succ=1.00 heldout_succ=0.08 | q=19329
+[v1_2/q_learning] seed 1 | ep  1800/3000 | eps=0.050 beta=0.083 | train_succ=1.00 heldout_succ=0.08 | q=21346
+[v1_2/q_learning] seed 1 | ep  2100/3000 | eps=0.050 beta=0.061 | train_succ=1.00 heldout_succ=0.08 | q=23317
+[v1_2/q_learning] seed 1 | ep  2400/3000 | eps=0.050 beta=0.045 | train_succ=1.00 heldout_succ=0.08 | q=24581
+[v1_2/q_learning] seed 1 | ep  2700/3000 | eps=0.050 beta=0.034 | train_succ=1.00 heldout_succ=0.08 | q=26934
+[v1_2/q_learning] seed 1 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=1.00 heldout_succ=0.08 | q=28309
+seed 1 | train_greedy=1.00 heldout_greedy=0.08 gap=0.92
+
+=== v1_2/q_learning seed 2 (demo_configs=16, deep=False) ===
+[v1_2/q_learning] seed 2 | ep   300/3000 | eps=0.074 beta=0.370 | train_succ=1.00 heldout_succ=0.00 | q=7706
+[v1_2/q_learning] seed 2 | ep   600/3000 | eps=0.055 beta=0.274 | train_succ=1.00 heldout_succ=0.00 | q=11141
+[v1_2/q_learning] seed 2 | ep   900/3000 | eps=0.050 beta=0.203 | train_succ=1.00 heldout_succ=0.00 | q=14125
+[v1_2/q_learning] seed 2 | ep  1200/3000 | eps=0.050 beta=0.151 | train_succ=1.00 heldout_succ=0.00 | q=16829
+[v1_2/q_learning] seed 2 | ep  1500/3000 | eps=0.050 beta=0.111 | train_succ=1.00 heldout_succ=0.00 | q=18990
+[v1_2/q_learning] seed 2 | ep  1800/3000 | eps=0.050 beta=0.083 | train_succ=1.00 heldout_succ=0.00 | q=20801
+[v1_2/q_learning] seed 2 | ep  2100/3000 | eps=0.050 beta=0.061 | train_succ=1.00 heldout_succ=0.00 | q=22936
+[v1_2/q_learning] seed 2 | ep  2400/3000 | eps=0.050 beta=0.045 | train_succ=1.00 heldout_succ=0.00 | q=24398
+[v1_2/q_learning] seed 2 | ep  2700/3000 | eps=0.050 beta=0.034 | train_succ=1.00 heldout_succ=0.00 | q=25903
+[v1_2/q_learning] seed 2 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=1.00 heldout_succ=0.00 | q=27120
+seed 2 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+=== v1_2/q_learning seed 3 (demo_configs=16, deep=False) ===
+[v1_2/q_learning] seed 3 | ep   300/3000 | eps=0.074 beta=0.370 | train_succ=1.00 heldout_succ=0.00 | q=8653
+[v1_2/q_learning] seed 3 | ep   600/3000 | eps=0.055 beta=0.274 | train_succ=1.00 heldout_succ=0.00 | q=12147
+[v1_2/q_learning] seed 3 | ep   900/3000 | eps=0.050 beta=0.203 | train_succ=1.00 heldout_succ=0.00 | q=15090
+[v1_2/q_learning] seed 3 | ep  1200/3000 | eps=0.050 beta=0.151 | train_succ=1.00 heldout_succ=0.00 | q=17823
+[v1_2/q_learning] seed 3 | ep  1500/3000 | eps=0.050 beta=0.111 | train_succ=1.00 heldout_succ=0.00 | q=19618
+[v1_2/q_learning] seed 3 | ep  1800/3000 | eps=0.050 beta=0.083 | train_succ=1.00 heldout_succ=0.00 | q=21810
+[v1_2/q_learning] seed 3 | ep  2100/3000 | eps=0.050 beta=0.061 | train_succ=1.00 heldout_succ=0.00 | q=23216
+[v1_2/q_learning] seed 3 | ep  2400/3000 | eps=0.050 beta=0.045 | train_succ=1.00 heldout_succ=0.00 | q=25283
+[v1_2/q_learning] seed 3 | ep  2700/3000 | eps=0.050 beta=0.034 | train_succ=1.00 heldout_succ=0.00 | q=26899
+[v1_2/q_learning] seed 3 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=1.00 heldout_succ=0.00 | q=28481
+seed 3 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+=== v1_2/q_learning seed 4 (demo_configs=16, deep=False) ===
+[v1_2/q_learning] seed 4 | ep   300/3000 | eps=0.074 beta=0.370 | train_succ=1.00 heldout_succ=0.00 | q=7290
+[v1_2/q_learning] seed 4 | ep   600/3000 | eps=0.055 beta=0.274 | train_succ=1.00 heldout_succ=0.00 | q=11060
+[v1_2/q_learning] seed 4 | ep   900/3000 | eps=0.050 beta=0.203 | train_succ=1.00 heldout_succ=0.00 | q=12987
+[v1_2/q_learning] seed 4 | ep  1200/3000 | eps=0.050 beta=0.151 | train_succ=1.00 heldout_succ=0.00 | q=15411
+[v1_2/q_learning] seed 4 | ep  1500/3000 | eps=0.050 beta=0.111 | train_succ=1.00 heldout_succ=0.00 | q=17547
+[v1_2/q_learning] seed 4 | ep  1800/3000 | eps=0.050 beta=0.083 | train_succ=1.00 heldout_succ=0.00 | q=19286
+[v1_2/q_learning] seed 4 | ep  2100/3000 | eps=0.050 beta=0.061 | train_succ=1.00 heldout_succ=0.00 | q=21404
+[v1_2/q_learning] seed 4 | ep  2400/3000 | eps=0.050 beta=0.045 | train_succ=1.00 heldout_succ=0.00 | q=23049
+[v1_2/q_learning] seed 4 | ep  2700/3000 | eps=0.050 beta=0.034 | train_succ=1.00 heldout_succ=0.00 | q=24871
+[v1_2/q_learning] seed 4 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=1.00 heldout_succ=0.00 | q=25938
+seed 4 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+========== v1_2/q_learning SUMMARY ==========
+ seed version       algo  train_greedy_success  heldout_greedy_success  generalization_gap  final_train_episode_success  q_table_size  learn_steps
+    0    v1_2 q_learning                   1.0                0.000000            1.000000                         0.87         28023            0
+    1    v1_2 q_learning                   1.0                0.083333            0.916667                         0.91         28309            0
+    2    v1_2 q_learning                   1.0                0.000000            1.000000                         0.89         27120            0
+    3    v1_2 q_learning                   1.0                0.000000            1.000000                         0.90         28481            0
+    4    v1_2 q_learning                   1.0                0.000000            1.000000                         0.90         25938            0
+
+Held-out success by protocol:
+protocol
+P0    0.000
+P1    0.043
+P2    0.000
+
+Held-out success by fault:
+fault
+NONE    0.017
+
+artifacts -> ./results/full_benchmark/V1.2/q_learning

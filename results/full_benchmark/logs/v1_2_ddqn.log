@@ -1,0 +1,85 @@
+
+=== v1_2/ddqn seed 0 (demo_configs=16, deep=True) ===
+[v1_2/ddqn] seed 0 | ep    20/200 | eps=0.196 beta=0.490 | train_succ=0.88 heldout_succ=0.00 | learn_steps=5075
+[v1_2/ddqn] seed 0 | ep    40/200 | eps=0.192 beta=0.480 | train_succ=1.00 heldout_succ=0.17 | learn_steps=9158
+[v1_2/ddqn] seed 0 | ep    60/200 | eps=0.188 beta=0.471 | train_succ=1.00 heldout_succ=0.08 | learn_steps=13304
+[v1_2/ddqn] seed 0 | ep    80/200 | eps=0.185 beta=0.462 | train_succ=1.00 heldout_succ=0.08 | learn_steps=17810
+[v1_2/ddqn] seed 0 | ep   100/200 | eps=0.181 beta=0.452 | train_succ=1.00 heldout_succ=0.08 | learn_steps=21186
+[v1_2/ddqn] seed 0 | ep   120/200 | eps=0.177 beta=0.443 | train_succ=1.00 heldout_succ=0.17 | learn_steps=24994
+[v1_2/ddqn] seed 0 | ep   140/200 | eps=0.174 beta=0.435 | train_succ=1.00 heldout_succ=0.17 | learn_steps=28917
+[v1_2/ddqn] seed 0 | ep   160/200 | eps=0.170 beta=0.426 | train_succ=1.00 heldout_succ=0.08 | learn_steps=32972
+[v1_2/ddqn] seed 0 | ep   180/200 | eps=0.167 beta=0.418 | train_succ=1.00 heldout_succ=0.00 | learn_steps=36658
+[v1_2/ddqn] seed 0 | ep   200/200 | eps=0.164 beta=0.409 | train_succ=1.00 heldout_succ=0.08 | learn_steps=39587
+seed 0 | train_greedy=1.00 heldout_greedy=0.08 gap=0.92
+
+=== v1_2/ddqn seed 1 (demo_configs=16, deep=True) ===
+[v1_2/ddqn] seed 1 | ep    20/200 | eps=0.196 beta=0.490 | train_succ=0.69 heldout_succ=0.00 | learn_steps=5140
+[v1_2/ddqn] seed 1 | ep    40/200 | eps=0.192 beta=0.480 | train_succ=0.94 heldout_succ=0.17 | learn_steps=8808
+[v1_2/ddqn] seed 1 | ep    60/200 | eps=0.188 beta=0.471 | train_succ=1.00 heldout_succ=0.25 | learn_steps=12501
+[v1_2/ddqn] seed 1 | ep    80/200 | eps=0.185 beta=0.462 | train_succ=1.00 heldout_succ=0.08 | learn_steps=16004
+[v1_2/ddqn] seed 1 | ep   100/200 | eps=0.181 beta=0.452 | train_succ=1.00 heldout_succ=0.17 | learn_steps=19718
+[v1_2/ddqn] seed 1 | ep   120/200 | eps=0.177 beta=0.443 | train_succ=1.00 heldout_succ=0.08 | learn_steps=23702
+[v1_2/ddqn] seed 1 | ep   140/200 | eps=0.174 beta=0.435 | train_succ=1.00 heldout_succ=0.08 | learn_steps=27265
+[v1_2/ddqn] seed 1 | ep   160/200 | eps=0.170 beta=0.426 | train_succ=1.00 heldout_succ=0.17 | learn_steps=31265
+[v1_2/ddqn] seed 1 | ep   180/200 | eps=0.167 beta=0.418 | train_succ=1.00 heldout_succ=0.17 | learn_steps=35037
+[v1_2/ddqn] seed 1 | ep   200/200 | eps=0.164 beta=0.409 | train_succ=1.00 heldout_succ=0.08 | learn_steps=39052
+seed 1 | train_greedy=1.00 heldout_greedy=0.08 gap=0.92
+
+=== v1_2/ddqn seed 2 (demo_configs=16, deep=True) ===
+[v1_2/ddqn] seed 2 | ep    20/200 | eps=0.196 beta=0.490 | train_succ=1.00 heldout_succ=0.25 | learn_steps=5285
+[v1_2/ddqn] seed 2 | ep    40/200 | eps=0.192 beta=0.480 | train_succ=1.00 heldout_succ=0.17 | learn_steps=9143
+[v1_2/ddqn] seed 2 | ep    60/200 | eps=0.188 beta=0.471 | train_succ=0.81 heldout_succ=0.17 | learn_steps=13503
+[v1_2/ddqn] seed 2 | ep    80/200 | eps=0.185 beta=0.462 | train_succ=1.00 heldout_succ=0.17 | learn_steps=17619
+[v1_2/ddqn] seed 2 | ep   100/200 | eps=0.181 beta=0.452 | train_succ=1.00 heldout_succ=0.17 | learn_steps=21659
+[v1_2/ddqn] seed 2 | ep   120/200 | eps=0.177 beta=0.443 | train_succ=1.00 heldout_succ=0.17 | learn_steps=25574
+[v1_2/ddqn] seed 2 | ep   140/200 | eps=0.174 beta=0.435 | train_succ=1.00 heldout_succ=0.17 | learn_steps=29917
+[v1_2/ddqn] seed 2 | ep   160/200 | eps=0.170 beta=0.426 | train_succ=1.00 heldout_succ=0.08 | learn_steps=33482
+[v1_2/ddqn] seed 2 | ep   180/200 | eps=0.167 beta=0.418 | train_succ=1.00 heldout_succ=0.08 | learn_steps=36646
+[v1_2/ddqn] seed 2 | ep   200/200 | eps=0.164 beta=0.409 | train_succ=1.00 heldout_succ=0.33 | learn_steps=40183
+seed 2 | train_greedy=1.00 heldout_greedy=0.33 gap=0.67
+
+=== v1_2/ddqn seed 3 (demo_configs=16, deep=True) ===
+[v1_2/ddqn] seed 3 | ep    20/200 | eps=0.196 beta=0.490 | train_succ=1.00 heldout_succ=0.08 | learn_steps=5458
+[v1_2/ddqn] seed 3 | ep    40/200 | eps=0.192 beta=0.480 | train_succ=1.00 heldout_succ=0.17 | learn_steps=9404
+[v1_2/ddqn] seed 3 | ep    60/200 | eps=0.188 beta=0.471 | train_succ=1.00 heldout_succ=0.08 | learn_steps=13570
+[v1_2/ddqn] seed 3 | ep    80/200 | eps=0.185 beta=0.462 | train_succ=1.00 heldout_succ=0.17 | learn_steps=17468
+[v1_2/ddqn] seed 3 | ep   100/200 | eps=0.181 beta=0.452 | train_succ=1.00 heldout_succ=0.17 | learn_steps=21400
+[v1_2/ddqn] seed 3 | ep   120/200 | eps=0.177 beta=0.443 | train_succ=1.00 heldout_succ=0.33 | learn_steps=25223
+[v1_2/ddqn] seed 3 | ep   140/200 | eps=0.174 beta=0.435 | train_succ=1.00 heldout_succ=0.08 | learn_steps=28580
+[v1_2/ddqn] seed 3 | ep   160/200 | eps=0.170 beta=0.426 | train_succ=1.00 heldout_succ=0.17 | learn_steps=32570
+[v1_2/ddqn] seed 3 | ep   180/200 | eps=0.167 beta=0.418 | train_succ=1.00 heldout_succ=0.17 | learn_steps=35664
+[v1_2/ddqn] seed 3 | ep   200/200 | eps=0.164 beta=0.409 | train_succ=1.00 heldout_succ=0.17 | learn_steps=38792
+seed 3 | train_greedy=1.00 heldout_greedy=0.17 gap=0.83
+
+=== v1_2/ddqn seed 4 (demo_configs=16, deep=True) ===
+[v1_2/ddqn] seed 4 | ep    20/200 | eps=0.196 beta=0.490 | train_succ=0.94 heldout_succ=0.00 | learn_steps=4692
+[v1_2/ddqn] seed 4 | ep    40/200 | eps=0.192 beta=0.480 | train_succ=1.00 heldout_succ=0.00 | learn_steps=7689
+[v1_2/ddqn] seed 4 | ep    60/200 | eps=0.188 beta=0.471 | train_succ=1.00 heldout_succ=0.00 | learn_steps=11438
+[v1_2/ddqn] seed 4 | ep    80/200 | eps=0.185 beta=0.462 | train_succ=1.00 heldout_succ=0.00 | learn_steps=15112
+[v1_2/ddqn] seed 4 | ep   100/200 | eps=0.181 beta=0.452 | train_succ=0.94 heldout_succ=0.00 | learn_steps=18590
+[v1_2/ddqn] seed 4 | ep   120/200 | eps=0.177 beta=0.443 | train_succ=1.00 heldout_succ=0.00 | learn_steps=21859
+[v1_2/ddqn] seed 4 | ep   140/200 | eps=0.174 beta=0.435 | train_succ=1.00 heldout_succ=0.00 | learn_steps=25352
+[v1_2/ddqn] seed 4 | ep   160/200 | eps=0.170 beta=0.426 | train_succ=1.00 heldout_succ=0.00 | learn_steps=29528
+[v1_2/ddqn] seed 4 | ep   180/200 | eps=0.167 beta=0.418 | train_succ=1.00 heldout_succ=0.00 | learn_steps=33162
+[v1_2/ddqn] seed 4 | ep   200/200 | eps=0.164 beta=0.409 | train_succ=1.00 heldout_succ=0.00 | learn_steps=36910
+seed 4 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+========== v1_2/ddqn SUMMARY ==========
+ seed version algo  train_greedy_success  heldout_greedy_success  generalization_gap  final_train_episode_success  q_table_size  learn_steps
+    0    v1_2 ddqn                   1.0                0.083333            0.916667                         0.42             0        39587
+    1    v1_2 ddqn                   1.0                0.083333            0.916667                         0.35             0        39052
+    2    v1_2 ddqn                   1.0                0.333333            0.666667                         0.44             0        40183
+    3    v1_2 ddqn                   1.0                0.166667            0.833333                         0.53             0        38792
+    4    v1_2 ddqn                   1.0                0.000000            1.000000                         0.37             0        36910
+
+Held-out success by protocol:
+protocol
+P0    0.062
+P1    0.174
+P2    0.143
+
+Held-out success by fault:
+fault
+NONE    0.133
+
+artifacts -> ./results/full_benchmark/V1.2/ddqn

@@ -1,0 +1,93 @@
+
+=== v1_4/sarsa seed 0 (demo_configs=0, deep=False) ===
+[v1_4/sarsa] seed 0 | ep   300/3000 | eps=0.741 beta=0.370 | train_succ=0.00 heldout_succ=0.00 | q=13142
+[v1_4/sarsa] seed 0 | ep   600/3000 | eps=0.549 beta=0.274 | train_succ=0.00 heldout_succ=0.00 | q=25928
+[v1_4/sarsa] seed 0 | ep   900/3000 | eps=0.406 beta=0.203 | train_succ=0.00 heldout_succ=0.00 | q=38789
+[v1_4/sarsa] seed 0 | ep  1200/3000 | eps=0.301 beta=0.151 | train_succ=0.00 heldout_succ=0.00 | q=52454
+[v1_4/sarsa] seed 0 | ep  1500/3000 | eps=0.223 beta=0.111 | train_succ=0.00 heldout_succ=0.00 | q=65175
+[v1_4/sarsa] seed 0 | ep  1800/3000 | eps=0.165 beta=0.083 | train_succ=0.00 heldout_succ=0.00 | q=77914
+[v1_4/sarsa] seed 0 | ep  2100/3000 | eps=0.122 beta=0.061 | train_succ=0.00 heldout_succ=0.00 | q=88031
+[v1_4/sarsa] seed 0 | ep  2400/3000 | eps=0.091 beta=0.045 | train_succ=0.00 heldout_succ=0.00 | q=96892
+[v1_4/sarsa] seed 0 | ep  2700/3000 | eps=0.067 beta=0.034 | train_succ=0.00 heldout_succ=0.00 | q=105966
+[v1_4/sarsa] seed 0 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=0.00 heldout_succ=0.00 | q=113930
+seed 0 | train_greedy=0.00 heldout_greedy=0.00 gap=0.00
+
+=== v1_4/sarsa seed 1 (demo_configs=0, deep=False) ===
+[v1_4/sarsa] seed 1 | ep   300/3000 | eps=0.741 beta=0.370 | train_succ=0.00 heldout_succ=0.00 | q=12619
+[v1_4/sarsa] seed 1 | ep   600/3000 | eps=0.549 beta=0.274 | train_succ=0.00 heldout_succ=0.00 | q=25828
+[v1_4/sarsa] seed 1 | ep   900/3000 | eps=0.406 beta=0.203 | train_succ=0.00 heldout_succ=0.00 | q=39064
+[v1_4/sarsa] seed 1 | ep  1200/3000 | eps=0.301 beta=0.151 | train_succ=0.00 heldout_succ=0.00 | q=53090
+[v1_4/sarsa] seed 1 | ep  1500/3000 | eps=0.223 beta=0.111 | train_succ=0.00 heldout_succ=0.00 | q=66696
+[v1_4/sarsa] seed 1 | ep  1800/3000 | eps=0.165 beta=0.083 | train_succ=0.00 heldout_succ=0.00 | q=78025
+[v1_4/sarsa] seed 1 | ep  2100/3000 | eps=0.122 beta=0.061 | train_succ=0.00 heldout_succ=0.00 | q=88868
+[v1_4/sarsa] seed 1 | ep  2400/3000 | eps=0.091 beta=0.045 | train_succ=0.00 heldout_succ=0.00 | q=98284
+[v1_4/sarsa] seed 1 | ep  2700/3000 | eps=0.067 beta=0.034 | train_succ=0.00 heldout_succ=0.00 | q=107118
+[v1_4/sarsa] seed 1 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=0.00 heldout_succ=0.00 | q=115732
+seed 1 | train_greedy=0.00 heldout_greedy=0.00 gap=0.00
+
+=== v1_4/sarsa seed 2 (demo_configs=0, deep=False) ===
+[v1_4/sarsa] seed 2 | ep   300/3000 | eps=0.741 beta=0.370 | train_succ=0.00 heldout_succ=0.00 | q=12696
+[v1_4/sarsa] seed 2 | ep   600/3000 | eps=0.549 beta=0.274 | train_succ=0.00 heldout_succ=0.00 | q=25220
+[v1_4/sarsa] seed 2 | ep   900/3000 | eps=0.406 beta=0.203 | train_succ=0.00 heldout_succ=0.00 | q=39045
+[v1_4/sarsa] seed 2 | ep  1200/3000 | eps=0.301 beta=0.151 | train_succ=0.00 heldout_succ=0.00 | q=53623
+[v1_4/sarsa] seed 2 | ep  1500/3000 | eps=0.223 beta=0.111 | train_succ=0.00 heldout_succ=0.00 | q=67265
+[v1_4/sarsa] seed 2 | ep  1800/3000 | eps=0.165 beta=0.083 | train_succ=0.00 heldout_succ=0.00 | q=79442
+[v1_4/sarsa] seed 2 | ep  2100/3000 | eps=0.122 beta=0.061 | train_succ=0.00 heldout_succ=0.00 | q=90045
+[v1_4/sarsa] seed 2 | ep  2400/3000 | eps=0.091 beta=0.045 | train_succ=0.00 heldout_succ=0.00 | q=99110
+[v1_4/sarsa] seed 2 | ep  2700/3000 | eps=0.067 beta=0.034 | train_succ=0.00 heldout_succ=0.00 | q=107346
+[v1_4/sarsa] seed 2 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=0.00 heldout_succ=0.00 | q=115427
+seed 2 | train_greedy=0.00 heldout_greedy=0.00 gap=0.00
+
+=== v1_4/sarsa seed 3 (demo_configs=0, deep=False) ===
+[v1_4/sarsa] seed 3 | ep   300/3000 | eps=0.741 beta=0.370 | train_succ=0.00 heldout_succ=0.00 | q=12892
+[v1_4/sarsa] seed 3 | ep   600/3000 | eps=0.549 beta=0.274 | train_succ=0.00 heldout_succ=0.00 | q=25370
+[v1_4/sarsa] seed 3 | ep   900/3000 | eps=0.406 beta=0.203 | train_succ=0.00 heldout_succ=0.00 | q=38830
+[v1_4/sarsa] seed 3 | ep  1200/3000 | eps=0.301 beta=0.151 | train_succ=0.00 heldout_succ=0.00 | q=53518
+[v1_4/sarsa] seed 3 | ep  1500/3000 | eps=0.223 beta=0.111 | train_succ=0.00 heldout_succ=0.00 | q=66391
+[v1_4/sarsa] seed 3 | ep  1800/3000 | eps=0.165 beta=0.083 | train_succ=0.00 heldout_succ=0.00 | q=77938
+[v1_4/sarsa] seed 3 | ep  2100/3000 | eps=0.122 beta=0.061 | train_succ=0.00 heldout_succ=0.00 | q=88608
+[v1_4/sarsa] seed 3 | ep  2400/3000 | eps=0.091 beta=0.045 | train_succ=0.00 heldout_succ=0.00 | q=97070
+[v1_4/sarsa] seed 3 | ep  2700/3000 | eps=0.067 beta=0.034 | train_succ=0.00 heldout_succ=0.00 | q=105815
+[v1_4/sarsa] seed 3 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=0.00 heldout_succ=0.00 | q=113149
+seed 3 | train_greedy=0.00 heldout_greedy=0.00 gap=0.00
+
+=== v1_4/sarsa seed 4 (demo_configs=0, deep=False) ===
+[v1_4/sarsa] seed 4 | ep   300/3000 | eps=0.741 beta=0.370 | train_succ=0.00 heldout_succ=0.00 | q=12964
+[v1_4/sarsa] seed 4 | ep   600/3000 | eps=0.549 beta=0.274 | train_succ=0.00 heldout_succ=0.00 | q=25414
+[v1_4/sarsa] seed 4 | ep   900/3000 | eps=0.406 beta=0.203 | train_succ=0.00 heldout_succ=0.00 | q=39226
+[v1_4/sarsa] seed 4 | ep  1200/3000 | eps=0.301 beta=0.151 | train_succ=0.00 heldout_succ=0.00 | q=53398
+[v1_4/sarsa] seed 4 | ep  1500/3000 | eps=0.223 beta=0.111 | train_succ=0.00 heldout_succ=0.00 | q=66731
+[v1_4/sarsa] seed 4 | ep  1800/3000 | eps=0.165 beta=0.083 | train_succ=0.00 heldout_succ=0.00 | q=78170
+[v1_4/sarsa] seed 4 | ep  2100/3000 | eps=0.122 beta=0.061 | train_succ=0.00 heldout_succ=0.00 | q=88752
+[v1_4/sarsa] seed 4 | ep  2400/3000 | eps=0.091 beta=0.045 | train_succ=0.00 heldout_succ=0.00 | q=97991
+[v1_4/sarsa] seed 4 | ep  2700/3000 | eps=0.067 beta=0.034 | train_succ=0.00 heldout_succ=0.00 | q=106577
+[v1_4/sarsa] seed 4 | ep  3000/3000 | eps=0.050 beta=0.025 | train_succ=0.00 heldout_succ=0.00 | q=114494
+./scripts/train_axiom_forge.py:527: RuntimeWarning: Mean of empty slice
+  ax.plot(ep, np.nanmean(ret_mean, 0), color="tab:green", linewidth=2,
+./scripts/train_axiom_forge.py:529: RuntimeWarning: Mean of empty slice
+  ax.plot(ep, np.nanmean(ts_mean, 0), color="tab:red", linewidth=2,
+seed 4 | train_greedy=0.00 heldout_greedy=0.00 gap=0.00
+
+========== v1_4/sarsa SUMMARY ==========
+ seed version  algo  train_greedy_success  heldout_greedy_success  generalization_gap  final_train_episode_success  q_table_size  learn_steps
+    0    v1_4 sarsa                   0.0                     0.0                 0.0                          0.0        113930            0
+    1    v1_4 sarsa                   0.0                     0.0                 0.0                          0.0        115732            0
+    2    v1_4 sarsa                   0.0                     0.0                 0.0                          0.0        115427            0
+    3    v1_4 sarsa                   0.0                     0.0                 0.0                          0.0        113149            0
+    4    v1_4 sarsa                   0.0                     0.0                 0.0                          0.0        114494            0
+
+Held-out success by protocol:
+protocol
+P0    0.0
+P1    0.0
+P2    0.0
+P3    0.0
+
+Held-out success by fault:
+fault
+ANALYZER_BIAS    0.0
+HEATER_SWAP      0.0
+NONE             0.0
+PURIFIER_LEAK    0.0
+
+artifacts -> ./results/full_benchmark/V1.4_e2/sarsa

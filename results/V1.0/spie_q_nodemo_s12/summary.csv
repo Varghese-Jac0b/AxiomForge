@@ -1,0 +1,3 @@
+seed,mode,abstraction,demo_sweeps,final_success_rate,final_mean_return,final_mean_steps,episodes_to_90pct,env_steps_to_90pct,greedy_eval_success,q_table_size,sr_states,first_manifest_read_ep,first_archive_read_ep,first_diagnostics_read_ep,first_sample_present_ep,first_refined_ep,first_analyzed_ep
+1,full,milestone,0,0.0,-2.950999999999986,250.0,,,0.0,3142,428,2,3,2,1,1.0,
+2,full,milestone,0,0.0,-3.0141999999999856,250.0,,,0.0,2746,399,1,5,5,1,,

@@ -1,0 +1,85 @@
+
+=== v1_2/dueling_dqn seed 0 (demo_configs=16, deep=True) ===
+[v1_2/dueling_dqn] seed 0 | ep    20/200 | eps=0.196 beta=0.490 | train_succ=1.00 heldout_succ=0.08 | learn_steps=4847
+[v1_2/dueling_dqn] seed 0 | ep    40/200 | eps=0.192 beta=0.480 | train_succ=1.00 heldout_succ=0.08 | learn_steps=9141
+[v1_2/dueling_dqn] seed 0 | ep    60/200 | eps=0.188 beta=0.471 | train_succ=1.00 heldout_succ=0.08 | learn_steps=13170
+[v1_2/dueling_dqn] seed 0 | ep    80/200 | eps=0.185 beta=0.462 | train_succ=1.00 heldout_succ=0.17 | learn_steps=16990
+[v1_2/dueling_dqn] seed 0 | ep   100/200 | eps=0.181 beta=0.452 | train_succ=1.00 heldout_succ=0.08 | learn_steps=20754
+[v1_2/dueling_dqn] seed 0 | ep   120/200 | eps=0.177 beta=0.443 | train_succ=1.00 heldout_succ=0.17 | learn_steps=24801
+[v1_2/dueling_dqn] seed 0 | ep   140/200 | eps=0.174 beta=0.435 | train_succ=1.00 heldout_succ=0.08 | learn_steps=28749
+[v1_2/dueling_dqn] seed 0 | ep   160/200 | eps=0.170 beta=0.426 | train_succ=1.00 heldout_succ=0.00 | learn_steps=32576
+[v1_2/dueling_dqn] seed 0 | ep   180/200 | eps=0.167 beta=0.418 | train_succ=1.00 heldout_succ=0.08 | learn_steps=36047
+[v1_2/dueling_dqn] seed 0 | ep   200/200 | eps=0.164 beta=0.409 | train_succ=1.00 heldout_succ=0.00 | learn_steps=39670
+seed 0 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+=== v1_2/dueling_dqn seed 1 (demo_configs=16, deep=True) ===
+[v1_2/dueling_dqn] seed 1 | ep    20/200 | eps=0.196 beta=0.490 | train_succ=1.00 heldout_succ=0.17 | learn_steps=4775
+[v1_2/dueling_dqn] seed 1 | ep    40/200 | eps=0.192 beta=0.480 | train_succ=1.00 heldout_succ=0.17 | learn_steps=8755
+[v1_2/dueling_dqn] seed 1 | ep    60/200 | eps=0.188 beta=0.471 | train_succ=1.00 heldout_succ=0.17 | learn_steps=12974
+[v1_2/dueling_dqn] seed 1 | ep    80/200 | eps=0.185 beta=0.462 | train_succ=1.00 heldout_succ=0.08 | learn_steps=17215
+[v1_2/dueling_dqn] seed 1 | ep   100/200 | eps=0.181 beta=0.452 | train_succ=1.00 heldout_succ=0.08 | learn_steps=21311
+[v1_2/dueling_dqn] seed 1 | ep   120/200 | eps=0.177 beta=0.443 | train_succ=1.00 heldout_succ=0.17 | learn_steps=25417
+[v1_2/dueling_dqn] seed 1 | ep   140/200 | eps=0.174 beta=0.435 | train_succ=1.00 heldout_succ=0.25 | learn_steps=29497
+[v1_2/dueling_dqn] seed 1 | ep   160/200 | eps=0.170 beta=0.426 | train_succ=1.00 heldout_succ=0.17 | learn_steps=32878
+[v1_2/dueling_dqn] seed 1 | ep   180/200 | eps=0.167 beta=0.418 | train_succ=1.00 heldout_succ=0.25 | learn_steps=36283
+[v1_2/dueling_dqn] seed 1 | ep   200/200 | eps=0.164 beta=0.409 | train_succ=1.00 heldout_succ=0.17 | learn_steps=39898
+seed 1 | train_greedy=1.00 heldout_greedy=0.17 gap=0.83
+
+=== v1_2/dueling_dqn seed 2 (demo_configs=16, deep=True) ===
+[v1_2/dueling_dqn] seed 2 | ep    20/200 | eps=0.196 beta=0.490 | train_succ=1.00 heldout_succ=0.25 | learn_steps=5423
+[v1_2/dueling_dqn] seed 2 | ep    40/200 | eps=0.192 beta=0.480 | train_succ=1.00 heldout_succ=0.25 | learn_steps=8976
+[v1_2/dueling_dqn] seed 2 | ep    60/200 | eps=0.188 beta=0.471 | train_succ=1.00 heldout_succ=0.25 | learn_steps=13331
+[v1_2/dueling_dqn] seed 2 | ep    80/200 | eps=0.185 beta=0.462 | train_succ=1.00 heldout_succ=0.17 | learn_steps=16945
+[v1_2/dueling_dqn] seed 2 | ep   100/200 | eps=0.181 beta=0.452 | train_succ=1.00 heldout_succ=0.08 | learn_steps=21041
+[v1_2/dueling_dqn] seed 2 | ep   120/200 | eps=0.177 beta=0.443 | train_succ=1.00 heldout_succ=0.08 | learn_steps=25302
+[v1_2/dueling_dqn] seed 2 | ep   140/200 | eps=0.174 beta=0.435 | train_succ=1.00 heldout_succ=0.17 | learn_steps=29201
+[v1_2/dueling_dqn] seed 2 | ep   160/200 | eps=0.170 beta=0.426 | train_succ=1.00 heldout_succ=0.25 | learn_steps=32779
+[v1_2/dueling_dqn] seed 2 | ep   180/200 | eps=0.167 beta=0.418 | train_succ=1.00 heldout_succ=0.00 | learn_steps=36473
+[v1_2/dueling_dqn] seed 2 | ep   200/200 | eps=0.164 beta=0.409 | train_succ=1.00 heldout_succ=0.08 | learn_steps=40127
+seed 2 | train_greedy=1.00 heldout_greedy=0.08 gap=0.92
+
+=== v1_2/dueling_dqn seed 3 (demo_configs=16, deep=True) ===
+[v1_2/dueling_dqn] seed 3 | ep    20/200 | eps=0.196 beta=0.490 | train_succ=1.00 heldout_succ=0.17 | learn_steps=5605
+[v1_2/dueling_dqn] seed 3 | ep    40/200 | eps=0.192 beta=0.480 | train_succ=1.00 heldout_succ=0.17 | learn_steps=9412
+[v1_2/dueling_dqn] seed 3 | ep    60/200 | eps=0.188 beta=0.471 | train_succ=1.00 heldout_succ=0.08 | learn_steps=13400
+[v1_2/dueling_dqn] seed 3 | ep    80/200 | eps=0.185 beta=0.462 | train_succ=1.00 heldout_succ=0.17 | learn_steps=17114
+[v1_2/dueling_dqn] seed 3 | ep   100/200 | eps=0.181 beta=0.452 | train_succ=1.00 heldout_succ=0.08 | learn_steps=21397
+[v1_2/dueling_dqn] seed 3 | ep   120/200 | eps=0.177 beta=0.443 | train_succ=1.00 heldout_succ=0.08 | learn_steps=25395
+[v1_2/dueling_dqn] seed 3 | ep   140/200 | eps=0.174 beta=0.435 | train_succ=1.00 heldout_succ=0.33 | learn_steps=29479
+[v1_2/dueling_dqn] seed 3 | ep   160/200 | eps=0.170 beta=0.426 | train_succ=1.00 heldout_succ=0.08 | learn_steps=33107
+[v1_2/dueling_dqn] seed 3 | ep   180/200 | eps=0.167 beta=0.418 | train_succ=1.00 heldout_succ=0.17 | learn_steps=36820
+[v1_2/dueling_dqn] seed 3 | ep   200/200 | eps=0.164 beta=0.409 | train_succ=1.00 heldout_succ=0.00 | learn_steps=40710
+seed 3 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+=== v1_2/dueling_dqn seed 4 (demo_configs=16, deep=True) ===
+[v1_2/dueling_dqn] seed 4 | ep    20/200 | eps=0.196 beta=0.490 | train_succ=1.00 heldout_succ=0.00 | learn_steps=5088
+[v1_2/dueling_dqn] seed 4 | ep    40/200 | eps=0.192 beta=0.480 | train_succ=1.00 heldout_succ=0.00 | learn_steps=8979
+[v1_2/dueling_dqn] seed 4 | ep    60/200 | eps=0.188 beta=0.471 | train_succ=1.00 heldout_succ=0.08 | learn_steps=12523
+[v1_2/dueling_dqn] seed 4 | ep    80/200 | eps=0.185 beta=0.462 | train_succ=1.00 heldout_succ=0.08 | learn_steps=16072
+[v1_2/dueling_dqn] seed 4 | ep   100/200 | eps=0.181 beta=0.452 | train_succ=1.00 heldout_succ=0.00 | learn_steps=20280
+[v1_2/dueling_dqn] seed 4 | ep   120/200 | eps=0.177 beta=0.443 | train_succ=0.94 heldout_succ=0.00 | learn_steps=24176
+[v1_2/dueling_dqn] seed 4 | ep   140/200 | eps=0.174 beta=0.435 | train_succ=1.00 heldout_succ=0.00 | learn_steps=27844
+[v1_2/dueling_dqn] seed 4 | ep   160/200 | eps=0.170 beta=0.426 | train_succ=1.00 heldout_succ=0.00 | learn_steps=31630
+[v1_2/dueling_dqn] seed 4 | ep   180/200 | eps=0.167 beta=0.418 | train_succ=1.00 heldout_succ=0.00 | learn_steps=35418
+[v1_2/dueling_dqn] seed 4 | ep   200/200 | eps=0.164 beta=0.409 | train_succ=1.00 heldout_succ=0.00 | learn_steps=38376
+seed 4 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+========== v1_2/dueling_dqn SUMMARY ==========
+ seed version        algo  train_greedy_success  heldout_greedy_success  generalization_gap  final_train_episode_success  q_table_size  learn_steps
+    0    v1_2 dueling_dqn                   1.0                0.000000            1.000000                         0.29             0        39670
+    1    v1_2 dueling_dqn                   1.0                0.166667            0.833333                         0.40             0        39898
+    2    v1_2 dueling_dqn                   1.0                0.083333            0.916667                         0.31             0        40127
+    3    v1_2 dueling_dqn                   1.0                0.000000            1.000000                         0.31             0        40710
+    4    v1_2 dueling_dqn                   1.0                0.000000            1.000000                         0.46             0        38376
+
+Held-out success by protocol:
+protocol
+P0    0.000
+P1    0.043
+P2    0.095
+
+Held-out success by fault:
+fault
+NONE    0.05
+
+artifacts -> ./results/full_benchmark/V1.2/dueling_dqn

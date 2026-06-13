@@ -1,0 +1,9 @@
+# AxiomForge — direct dependencies (curated).
+# For the exact, fully-pinned environment used in the verified benchmark,
+# see requirements-lock.txt.
+gymnasium==1.3.0
+numpy==2.4.6
+pandas==3.0.3
+matplotlib==3.10.9
+torch==2.12.0
+pytest==9.0.3

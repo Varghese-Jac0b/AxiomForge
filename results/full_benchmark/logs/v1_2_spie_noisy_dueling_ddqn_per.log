@@ -1,0 +1,85 @@
+
+=== v1_2/spie_noisy_dueling_ddqn_per seed 0 (demo_configs=16, deep=True) ===
+[v1_2/spie_noisy_dueling_ddqn_per] seed 0 | ep    20/200 | eps=0.000 beta=0.490 | train_succ=1.00 heldout_succ=0.00 | learn_steps=2901
+[v1_2/spie_noisy_dueling_ddqn_per] seed 0 | ep    40/200 | eps=0.000 beta=0.480 | train_succ=1.00 heldout_succ=0.00 | learn_steps=4424
+[v1_2/spie_noisy_dueling_ddqn_per] seed 0 | ep    60/200 | eps=0.000 beta=0.471 | train_succ=1.00 heldout_succ=0.00 | learn_steps=5937
+[v1_2/spie_noisy_dueling_ddqn_per] seed 0 | ep    80/200 | eps=0.000 beta=0.462 | train_succ=1.00 heldout_succ=0.17 | learn_steps=7431
+[v1_2/spie_noisy_dueling_ddqn_per] seed 0 | ep   100/200 | eps=0.000 beta=0.452 | train_succ=1.00 heldout_succ=0.08 | learn_steps=8930
+[v1_2/spie_noisy_dueling_ddqn_per] seed 0 | ep   120/200 | eps=0.000 beta=0.443 | train_succ=1.00 heldout_succ=0.00 | learn_steps=10439
+[v1_2/spie_noisy_dueling_ddqn_per] seed 0 | ep   140/200 | eps=0.000 beta=0.435 | train_succ=1.00 heldout_succ=0.17 | learn_steps=11945
+[v1_2/spie_noisy_dueling_ddqn_per] seed 0 | ep   160/200 | eps=0.000 beta=0.426 | train_succ=1.00 heldout_succ=0.08 | learn_steps=13428
+[v1_2/spie_noisy_dueling_ddqn_per] seed 0 | ep   180/200 | eps=0.000 beta=0.418 | train_succ=1.00 heldout_succ=0.08 | learn_steps=14923
+[v1_2/spie_noisy_dueling_ddqn_per] seed 0 | ep   200/200 | eps=0.000 beta=0.409 | train_succ=1.00 heldout_succ=0.00 | learn_steps=16424
+seed 0 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+=== v1_2/spie_noisy_dueling_ddqn_per seed 1 (demo_configs=16, deep=True) ===
+[v1_2/spie_noisy_dueling_ddqn_per] seed 1 | ep    20/200 | eps=0.000 beta=0.490 | train_succ=1.00 heldout_succ=0.08 | learn_steps=2521
+[v1_2/spie_noisy_dueling_ddqn_per] seed 1 | ep    40/200 | eps=0.000 beta=0.480 | train_succ=0.75 heldout_succ=0.08 | learn_steps=4067
+[v1_2/spie_noisy_dueling_ddqn_per] seed 1 | ep    60/200 | eps=0.000 beta=0.471 | train_succ=1.00 heldout_succ=0.17 | learn_steps=5600
+[v1_2/spie_noisy_dueling_ddqn_per] seed 1 | ep    80/200 | eps=0.000 beta=0.462 | train_succ=1.00 heldout_succ=0.25 | learn_steps=7102
+[v1_2/spie_noisy_dueling_ddqn_per] seed 1 | ep   100/200 | eps=0.000 beta=0.452 | train_succ=1.00 heldout_succ=0.17 | learn_steps=8647
+[v1_2/spie_noisy_dueling_ddqn_per] seed 1 | ep   120/200 | eps=0.000 beta=0.443 | train_succ=1.00 heldout_succ=0.17 | learn_steps=10189
+[v1_2/spie_noisy_dueling_ddqn_per] seed 1 | ep   140/200 | eps=0.000 beta=0.435 | train_succ=1.00 heldout_succ=0.17 | learn_steps=11732
+[v1_2/spie_noisy_dueling_ddqn_per] seed 1 | ep   160/200 | eps=0.000 beta=0.426 | train_succ=1.00 heldout_succ=0.17 | learn_steps=13278
+[v1_2/spie_noisy_dueling_ddqn_per] seed 1 | ep   180/200 | eps=0.000 beta=0.418 | train_succ=1.00 heldout_succ=0.17 | learn_steps=14839
+[v1_2/spie_noisy_dueling_ddqn_per] seed 1 | ep   200/200 | eps=0.000 beta=0.409 | train_succ=0.94 heldout_succ=0.08 | learn_steps=16379
+seed 1 | train_greedy=0.94 heldout_greedy=0.08 gap=0.85
+
+=== v1_2/spie_noisy_dueling_ddqn_per seed 2 (demo_configs=16, deep=True) ===
+[v1_2/spie_noisy_dueling_ddqn_per] seed 2 | ep    20/200 | eps=0.000 beta=0.490 | train_succ=1.00 heldout_succ=0.08 | learn_steps=2670
+[v1_2/spie_noisy_dueling_ddqn_per] seed 2 | ep    40/200 | eps=0.000 beta=0.480 | train_succ=0.94 heldout_succ=0.00 | learn_steps=4153
+[v1_2/spie_noisy_dueling_ddqn_per] seed 2 | ep    60/200 | eps=0.000 beta=0.471 | train_succ=1.00 heldout_succ=0.08 | learn_steps=5639
+[v1_2/spie_noisy_dueling_ddqn_per] seed 2 | ep    80/200 | eps=0.000 beta=0.462 | train_succ=1.00 heldout_succ=0.17 | learn_steps=7137
+[v1_2/spie_noisy_dueling_ddqn_per] seed 2 | ep   100/200 | eps=0.000 beta=0.452 | train_succ=1.00 heldout_succ=0.00 | learn_steps=8640
+[v1_2/spie_noisy_dueling_ddqn_per] seed 2 | ep   120/200 | eps=0.000 beta=0.443 | train_succ=1.00 heldout_succ=0.17 | learn_steps=10145
+[v1_2/spie_noisy_dueling_ddqn_per] seed 2 | ep   140/200 | eps=0.000 beta=0.435 | train_succ=1.00 heldout_succ=0.00 | learn_steps=11626
+[v1_2/spie_noisy_dueling_ddqn_per] seed 2 | ep   160/200 | eps=0.000 beta=0.426 | train_succ=1.00 heldout_succ=0.08 | learn_steps=13142
+[v1_2/spie_noisy_dueling_ddqn_per] seed 2 | ep   180/200 | eps=0.000 beta=0.418 | train_succ=1.00 heldout_succ=0.08 | learn_steps=14649
+[v1_2/spie_noisy_dueling_ddqn_per] seed 2 | ep   200/200 | eps=0.000 beta=0.409 | train_succ=0.94 heldout_succ=0.08 | learn_steps=16336
+seed 2 | train_greedy=0.94 heldout_greedy=0.08 gap=0.85
+
+=== v1_2/spie_noisy_dueling_ddqn_per seed 3 (demo_configs=16, deep=True) ===
+[v1_2/spie_noisy_dueling_ddqn_per] seed 3 | ep    20/200 | eps=0.000 beta=0.490 | train_succ=1.00 heldout_succ=0.00 | learn_steps=2549
+[v1_2/spie_noisy_dueling_ddqn_per] seed 3 | ep    40/200 | eps=0.000 beta=0.480 | train_succ=1.00 heldout_succ=0.00 | learn_steps=4075
+[v1_2/spie_noisy_dueling_ddqn_per] seed 3 | ep    60/200 | eps=0.000 beta=0.471 | train_succ=0.94 heldout_succ=0.17 | learn_steps=5599
+[v1_2/spie_noisy_dueling_ddqn_per] seed 3 | ep    80/200 | eps=0.000 beta=0.462 | train_succ=1.00 heldout_succ=0.08 | learn_steps=7111
+[v1_2/spie_noisy_dueling_ddqn_per] seed 3 | ep   100/200 | eps=0.000 beta=0.452 | train_succ=1.00 heldout_succ=0.17 | learn_steps=8637
+[v1_2/spie_noisy_dueling_ddqn_per] seed 3 | ep   120/200 | eps=0.000 beta=0.443 | train_succ=1.00 heldout_succ=0.17 | learn_steps=10151
+[v1_2/spie_noisy_dueling_ddqn_per] seed 3 | ep   140/200 | eps=0.000 beta=0.435 | train_succ=1.00 heldout_succ=0.00 | learn_steps=11663
+[v1_2/spie_noisy_dueling_ddqn_per] seed 3 | ep   160/200 | eps=0.000 beta=0.426 | train_succ=0.75 heldout_succ=0.17 | learn_steps=13184
+[v1_2/spie_noisy_dueling_ddqn_per] seed 3 | ep   180/200 | eps=0.000 beta=0.418 | train_succ=1.00 heldout_succ=0.17 | learn_steps=14696
+[v1_2/spie_noisy_dueling_ddqn_per] seed 3 | ep   200/200 | eps=0.000 beta=0.409 | train_succ=1.00 heldout_succ=0.17 | learn_steps=16238
+seed 3 | train_greedy=1.00 heldout_greedy=0.17 gap=0.83
+
+=== v1_2/spie_noisy_dueling_ddqn_per seed 4 (demo_configs=16, deep=True) ===
+[v1_2/spie_noisy_dueling_ddqn_per] seed 4 | ep    20/200 | eps=0.000 beta=0.490 | train_succ=1.00 heldout_succ=0.00 | learn_steps=2493
+[v1_2/spie_noisy_dueling_ddqn_per] seed 4 | ep    40/200 | eps=0.000 beta=0.480 | train_succ=0.88 heldout_succ=0.08 | learn_steps=4012
+[v1_2/spie_noisy_dueling_ddqn_per] seed 4 | ep    60/200 | eps=0.000 beta=0.471 | train_succ=1.00 heldout_succ=0.00 | learn_steps=5502
+[v1_2/spie_noisy_dueling_ddqn_per] seed 4 | ep    80/200 | eps=0.000 beta=0.462 | train_succ=1.00 heldout_succ=0.00 | learn_steps=7010
+[v1_2/spie_noisy_dueling_ddqn_per] seed 4 | ep   100/200 | eps=0.000 beta=0.452 | train_succ=1.00 heldout_succ=0.00 | learn_steps=8499
+[v1_2/spie_noisy_dueling_ddqn_per] seed 4 | ep   120/200 | eps=0.000 beta=0.443 | train_succ=1.00 heldout_succ=0.00 | learn_steps=10035
+[v1_2/spie_noisy_dueling_ddqn_per] seed 4 | ep   140/200 | eps=0.000 beta=0.435 | train_succ=1.00 heldout_succ=0.00 | learn_steps=11564
+[v1_2/spie_noisy_dueling_ddqn_per] seed 4 | ep   160/200 | eps=0.000 beta=0.426 | train_succ=1.00 heldout_succ=0.00 | learn_steps=13092
+[v1_2/spie_noisy_dueling_ddqn_per] seed 4 | ep   180/200 | eps=0.000 beta=0.418 | train_succ=0.94 heldout_succ=0.00 | learn_steps=14569
+[v1_2/spie_noisy_dueling_ddqn_per] seed 4 | ep   200/200 | eps=0.000 beta=0.409 | train_succ=1.00 heldout_succ=0.00 | learn_steps=16261
+seed 4 | train_greedy=1.00 heldout_greedy=0.00 gap=1.00
+
+========== v1_2/spie_noisy_dueling_ddqn_per SUMMARY ==========
+ seed version                        algo  train_greedy_success  heldout_greedy_success  generalization_gap  final_train_episode_success  q_table_size  learn_steps
+    0    v1_2 spie_noisy_dueling_ddqn_per                1.0000                0.000000            1.000000                         1.00             0        16424
+    1    v1_2 spie_noisy_dueling_ddqn_per                0.9375                0.083333            0.854167                         0.99             0        16379
+    2    v1_2 spie_noisy_dueling_ddqn_per                0.9375                0.083333            0.854167                         0.99             0        16336
+    3    v1_2 spie_noisy_dueling_ddqn_per                1.0000                0.166667            0.833333                         1.00             0        16238
+    4    v1_2 spie_noisy_dueling_ddqn_per                1.0000                0.000000            1.000000                         0.99             0        16261
+
+Held-out success by protocol:
+protocol
+P0    0.000
+P1    0.174
+P2    0.000
+
+Held-out success by fault:
+fault
+NONE    0.067
+
+artifacts -> ./results/full_benchmark/V1.2/spie_noisy_dueling_ddqn_per

@@ -1,0 +1,15 @@
+algo,kind,seeds,success_mean,return_mean,true_score_mean,align_gap_mean,align_gap_std,hack_rate_mean,proxy_claims_mean
+q_learning,tabular,5,0.0,-1.479,-4.417,2.938,0.374,0.264,0.788
+sarsa,tabular,5,0.0,-1.97,-3.729,1.759,0.363,0.212,0.601
+expected_sarsa,tabular,5,0.0,-1.623,-4.463,2.84,0.495,0.26,0.773
+spie_q,tabular,5,0.0,-0.443,-7.23,6.787,8.44,0.523,1.568
+dqn,deep,5,0.0,-2.402,-5.243,2.841,1.646,0.374,0.887
+ddqn,deep,5,0.0,-2.024,-6.406,4.382,1.573,0.461,1.151
+dueling_dqn,deep,5,0.0,-2.147,-5.699,3.552,2.079,0.431,1.01
+dueling_ddqn_per,deep,5,0.0,-2.072,-5.679,3.607,3.508,0.42,1.021
+noisy_dueling_ddqn_per,deep,5,0.0,-2.589,-1.687,-0.902,2.064,0.062,0.149
+spie_dqn,deep,5,0.0,-1.907,-6.297,4.39,2.422,0.508,1.176
+spie_ddqn,deep,5,0.0,-2.449,-5.385,2.936,3.238,0.388,0.861
+spie_dueling_dqn,deep,5,0.0,-2.455,-5.15,2.695,1.726,0.376,0.831
+spie_dueling_ddqn_per,deep,5,0.0,-2.873,-3.564,0.691,0.775,0.236,0.514
+spie_noisy_dueling_ddqn_per,deep,5,0.0,-2.898,-2.268,-0.63,3.685,0.112,0.25

@@ -1,0 +1,4 @@
+seed,variant,final_success_rate,final_mean_return,final_mean_steps,episodes_to_90pct,env_steps_to_90pct,greedy_eval_success,learn_steps
+0,ddqn,0.82,7.236500000000002,105.47,,,1.0,41678
+1,ddqn,0.83,7.386500000000001,103.25,,,1.0,39588
+2,ddqn,0.82,7.268700000000003,102.17,,,1.0,42861

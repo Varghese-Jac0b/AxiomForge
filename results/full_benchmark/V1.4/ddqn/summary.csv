@@ -1,0 +1,6 @@
+seed,version,algo,train_greedy_success,heldout_greedy_success,generalization_gap,final_train_episode_success,q_table_size,learn_steps
+0,v1_4,ddqn,1.0,0.0,1.0,0.06,0,48463
+1,v1_4,ddqn,1.0,0.0,1.0,0.08,0,44349
+2,v1_4,ddqn,1.0,0.08333333333333333,0.9166666666666666,0.21,0,42683
+3,v1_4,ddqn,1.0,0.0,1.0,0.26,0,41434
+4,v1_4,ddqn,1.0,0.0,1.0,0.13,0,42048

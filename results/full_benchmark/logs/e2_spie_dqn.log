@@ -1,0 +1,93 @@
+
+=== v1_4/spie_dqn seed 0 (demo_configs=0, deep=True) ===
+[v1_4/spie_dqn] seed 0 | ep    40/400 | eps=0.961 beta=0.480 | train_succ=0.00 heldout_succ=0.00 | learn_steps=10971
+[v1_4/spie_dqn] seed 0 | ep    80/400 | eps=0.923 beta=0.462 | train_succ=0.00 heldout_succ=0.00 | learn_steps=21212
+[v1_4/spie_dqn] seed 0 | ep   120/400 | eps=0.887 beta=0.443 | train_succ=0.00 heldout_succ=0.00 | learn_steps=31769
+[v1_4/spie_dqn] seed 0 | ep   160/400 | eps=0.852 beta=0.426 | train_succ=0.00 heldout_succ=0.00 | learn_steps=41582
+[v1_4/spie_dqn] seed 0 | ep   200/400 | eps=0.819 beta=0.409 | train_succ=0.00 heldout_succ=0.00 | learn_steps=50726
+[v1_4/spie_dqn] seed 0 | ep   240/400 | eps=0.787 beta=0.393 | train_succ=0.00 heldout_succ=0.00 | learn_steps=61045
+[v1_4/spie_dqn] seed 0 | ep   280/400 | eps=0.756 beta=0.378 | train_succ=0.00 heldout_succ=0.00 | learn_steps=70392
+[v1_4/spie_dqn] seed 0 | ep   320/400 | eps=0.726 beta=0.363 | train_succ=0.00 heldout_succ=0.00 | learn_steps=80007
+[v1_4/spie_dqn] seed 0 | ep   360/400 | eps=0.698 beta=0.349 | train_succ=0.00 heldout_succ=0.00 | learn_steps=87658
+[v1_4/spie_dqn] seed 0 | ep   400/400 | eps=0.670 beta=0.335 | train_succ=0.00 heldout_succ=0.00 | learn_steps=98121
+seed 0 | train_greedy=0.00 heldout_greedy=0.00 gap=0.00
+
+=== v1_4/spie_dqn seed 1 (demo_configs=0, deep=True) ===
+[v1_4/spie_dqn] seed 1 | ep    40/400 | eps=0.961 beta=0.480 | train_succ=0.00 heldout_succ=0.00 | learn_steps=11040
+[v1_4/spie_dqn] seed 1 | ep    80/400 | eps=0.923 beta=0.462 | train_succ=0.00 heldout_succ=0.00 | learn_steps=21798
+[v1_4/spie_dqn] seed 1 | ep   120/400 | eps=0.887 beta=0.443 | train_succ=0.00 heldout_succ=0.00 | learn_steps=32048
+[v1_4/spie_dqn] seed 1 | ep   160/400 | eps=0.852 beta=0.426 | train_succ=0.00 heldout_succ=0.00 | learn_steps=40965
+[v1_4/spie_dqn] seed 1 | ep   200/400 | eps=0.819 beta=0.409 | train_succ=0.00 heldout_succ=0.00 | learn_steps=50864
+[v1_4/spie_dqn] seed 1 | ep   240/400 | eps=0.787 beta=0.393 | train_succ=0.00 heldout_succ=0.00 | learn_steps=60704
+[v1_4/spie_dqn] seed 1 | ep   280/400 | eps=0.756 beta=0.378 | train_succ=0.00 heldout_succ=0.00 | learn_steps=71199
+[v1_4/spie_dqn] seed 1 | ep   320/400 | eps=0.726 beta=0.363 | train_succ=0.00 heldout_succ=0.00 | learn_steps=81632
+[v1_4/spie_dqn] seed 1 | ep   360/400 | eps=0.698 beta=0.349 | train_succ=0.00 heldout_succ=0.00 | learn_steps=92672
+[v1_4/spie_dqn] seed 1 | ep   400/400 | eps=0.670 beta=0.335 | train_succ=0.00 heldout_succ=0.00 | learn_steps=103342
+seed 1 | train_greedy=0.00 heldout_greedy=0.00 gap=0.00
+
+=== v1_4/spie_dqn seed 2 (demo_configs=0, deep=True) ===
+[v1_4/spie_dqn] seed 2 | ep    40/400 | eps=0.961 beta=0.480 | train_succ=0.00 heldout_succ=0.00 | learn_steps=10842
+[v1_4/spie_dqn] seed 2 | ep    80/400 | eps=0.923 beta=0.462 | train_succ=0.00 heldout_succ=0.00 | learn_steps=21683
+[v1_4/spie_dqn] seed 2 | ep   120/400 | eps=0.887 beta=0.443 | train_succ=0.00 heldout_succ=0.00 | learn_steps=32199
+[v1_4/spie_dqn] seed 2 | ep   160/400 | eps=0.852 beta=0.426 | train_succ=0.00 heldout_succ=0.00 | learn_steps=42025
+[v1_4/spie_dqn] seed 2 | ep   200/400 | eps=0.819 beta=0.409 | train_succ=0.00 heldout_succ=0.00 | learn_steps=50567
+[v1_4/spie_dqn] seed 2 | ep   240/400 | eps=0.787 beta=0.393 | train_succ=0.00 heldout_succ=0.00 | learn_steps=60847
+[v1_4/spie_dqn] seed 2 | ep   280/400 | eps=0.756 beta=0.378 | train_succ=0.00 heldout_succ=0.00 | learn_steps=70864
+[v1_4/spie_dqn] seed 2 | ep   320/400 | eps=0.726 beta=0.363 | train_succ=0.00 heldout_succ=0.00 | learn_steps=81632
+[v1_4/spie_dqn] seed 2 | ep   360/400 | eps=0.698 beta=0.349 | train_succ=0.00 heldout_succ=0.00 | learn_steps=92558
+[v1_4/spie_dqn] seed 2 | ep   400/400 | eps=0.670 beta=0.335 | train_succ=0.00 heldout_succ=0.00 | learn_steps=103553
+seed 2 | train_greedy=0.00 heldout_greedy=0.00 gap=0.00
+
+=== v1_4/spie_dqn seed 3 (demo_configs=0, deep=True) ===
+[v1_4/spie_dqn] seed 3 | ep    40/400 | eps=0.961 beta=0.480 | train_succ=0.00 heldout_succ=0.00 | learn_steps=11016
+[v1_4/spie_dqn] seed 3 | ep    80/400 | eps=0.923 beta=0.462 | train_succ=0.00 heldout_succ=0.00 | learn_steps=21484
+[v1_4/spie_dqn] seed 3 | ep   120/400 | eps=0.887 beta=0.443 | train_succ=0.00 heldout_succ=0.00 | learn_steps=31078
+[v1_4/spie_dqn] seed 3 | ep   160/400 | eps=0.852 beta=0.426 | train_succ=0.00 heldout_succ=0.00 | learn_steps=40596
+[v1_4/spie_dqn] seed 3 | ep   200/400 | eps=0.819 beta=0.409 | train_succ=0.00 heldout_succ=0.00 | learn_steps=50962
+[v1_4/spie_dqn] seed 3 | ep   240/400 | eps=0.787 beta=0.393 | train_succ=0.00 heldout_succ=0.00 | learn_steps=61650
+[v1_4/spie_dqn] seed 3 | ep   280/400 | eps=0.756 beta=0.378 | train_succ=0.00 heldout_succ=0.00 | learn_steps=72450
+[v1_4/spie_dqn] seed 3 | ep   320/400 | eps=0.726 beta=0.363 | train_succ=0.00 heldout_succ=0.00 | learn_steps=82035
+[v1_4/spie_dqn] seed 3 | ep   360/400 | eps=0.698 beta=0.349 | train_succ=0.00 heldout_succ=0.00 | learn_steps=92644
+[v1_4/spie_dqn] seed 3 | ep   400/400 | eps=0.670 beta=0.335 | train_succ=0.00 heldout_succ=0.00 | learn_steps=103003
+seed 3 | train_greedy=0.00 heldout_greedy=0.00 gap=0.00
+
+=== v1_4/spie_dqn seed 4 (demo_configs=0, deep=True) ===
+[v1_4/spie_dqn] seed 4 | ep    40/400 | eps=0.961 beta=0.480 | train_succ=0.00 heldout_succ=0.00 | learn_steps=10660
+[v1_4/spie_dqn] seed 4 | ep    80/400 | eps=0.923 beta=0.462 | train_succ=0.00 heldout_succ=0.00 | learn_steps=21454
+[v1_4/spie_dqn] seed 4 | ep   120/400 | eps=0.887 beta=0.443 | train_succ=0.00 heldout_succ=0.00 | learn_steps=30926
+[v1_4/spie_dqn] seed 4 | ep   160/400 | eps=0.852 beta=0.426 | train_succ=0.00 heldout_succ=0.00 | learn_steps=40774
+[v1_4/spie_dqn] seed 4 | ep   200/400 | eps=0.819 beta=0.409 | train_succ=0.00 heldout_succ=0.00 | learn_steps=49825
+[v1_4/spie_dqn] seed 4 | ep   240/400 | eps=0.787 beta=0.393 | train_succ=0.00 heldout_succ=0.00 | learn_steps=60068
+[v1_4/spie_dqn] seed 4 | ep   280/400 | eps=0.756 beta=0.378 | train_succ=0.00 heldout_succ=0.00 | learn_steps=70851
+[v1_4/spie_dqn] seed 4 | ep   320/400 | eps=0.726 beta=0.363 | train_succ=0.00 heldout_succ=0.00 | learn_steps=81632
+[v1_4/spie_dqn] seed 4 | ep   360/400 | eps=0.698 beta=0.349 | train_succ=0.00 heldout_succ=0.00 | learn_steps=92364
+[v1_4/spie_dqn] seed 4 | ep   400/400 | eps=0.670 beta=0.335 | train_succ=0.00 heldout_succ=0.00 | learn_steps=102944
+./scripts/train_axiom_forge.py:527: RuntimeWarning: Mean of empty slice
+  ax.plot(ep, np.nanmean(ret_mean, 0), color="tab:green", linewidth=2,
+./scripts/train_axiom_forge.py:529: RuntimeWarning: Mean of empty slice
+  ax.plot(ep, np.nanmean(ts_mean, 0), color="tab:red", linewidth=2,
+seed 4 | train_greedy=0.00 heldout_greedy=0.00 gap=0.00
+
+========== v1_4/spie_dqn SUMMARY ==========
+ seed version     algo  train_greedy_success  heldout_greedy_success  generalization_gap  final_train_episode_success  q_table_size  learn_steps
+    0    v1_4 spie_dqn                   0.0                     0.0                 0.0                          0.0             0        98121
+    1    v1_4 spie_dqn                   0.0                     0.0                 0.0                          0.0             0       103342
+    2    v1_4 spie_dqn                   0.0                     0.0                 0.0                          0.0             0       103553
+    3    v1_4 spie_dqn                   0.0                     0.0                 0.0                          0.0             0       103003
+    4    v1_4 spie_dqn                   0.0                     0.0                 0.0                          0.0             0       102944
+
+Held-out success by protocol:
+protocol
+P0    0.0
+P1    0.0
+P2    0.0
+P3    0.0
+
+Held-out success by fault:
+fault
+ANALYZER_BIAS    0.0
+HEATER_SWAP      0.0
+NONE             0.0
+PURIFIER_LEAK    0.0
+
+artifacts -> ./results/full_benchmark/V1.4_e2/spie_dqn

@@ -1,0 +1,6 @@
+seed,version,algo,train_greedy_success,heldout_greedy_success,generalization_gap,final_train_episode_success,q_table_size,learn_steps
+0,v1_1,sarsa,0.75,0.0,0.75,0.91,19639,0
+1,v1_1,sarsa,0.8125,0.0,0.8125,0.81,18961,0
+2,v1_1,sarsa,0.875,0.0,0.875,0.9,19243,0
+3,v1_1,sarsa,0.75,0.0,0.75,0.9,20419,0
+4,v1_1,sarsa,1.0,0.08333333333333333,0.9166666666666666,0.92,18342,0

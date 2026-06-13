@@ -1,0 +1,2 @@
+seed,variant,final_success_rate,final_mean_return,final_mean_steps,episodes_to_90pct,env_steps_to_90pct,greedy_eval_success,learn_steps
+0,dueling_dqn,0.4,1.4150000000000085,176.83333333333334,,,1.0,5505

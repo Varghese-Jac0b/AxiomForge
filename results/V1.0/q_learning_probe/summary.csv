@@ -1,0 +1,2 @@
+seed,final_success_rate,final_mean_return,final_mean_steps,episodes_to_90pct,env_steps_to_90pct,q_table_size
+0,0.0,-3.2091999999999894,236.62,,,232870
