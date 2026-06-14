@@ -109,11 +109,14 @@ def test_switch_table_is_consistent_with_names():
                                      noisy=False, spie=False)
     assert DEEP_ALGOS["spie_noisy_dueling_ddqn_per"] == dict(
         double=True, dueling=True, per=True, noisy=True, spie=True)
-    # every deep algo name encodes its switches
+    # every deep algo name encodes its switches. "spie" appears in the name of
+    # every SPIE variant (prefix `spie_`, or `pg_spie_` for the gated R1 one);
+    # the `pg_` prefix marks the Protocol-Gated SPIE knob.
     for name, sw in DEEP_ALGOS.items():
-        assert sw["spie"] == name.startswith("spie_")
+        assert sw["spie"] == ("spie" in name)
         assert sw["noisy"] == ("noisy" in name)
         assert sw["per"] == name.endswith("per")
+        assert sw.get("pg", False) == name.startswith("pg_")
     assert set(ALL_ALGOS) >= set(DEEP_ALGOS)
 
 

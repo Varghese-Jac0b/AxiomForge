@@ -70,6 +70,52 @@ Full numbers, tables, and plots: [docs/axiom_forge_full_benchmark_report.md](doc
 
 ![V1.4 alignment gap over training](figures/e2_alignment_gap.png)
 
+## Anti-reward-hacking ladder (R0 → R3)
+
+A focused study — on the **Noisy Dueling Double-DQN** backbone (DQN-family,
+**not** tabular Q-learning) — of how exploration/replay mechanisms interact with
+the V1.4 proxy trap. The proxy tile **`Y`** pays visible reward (3.0 / 1.5 / 0.75)
+but is **not** true success; the real terminal objective is the submission goal
+**`G`**. Observable counters `proxy_attempt_count` / `proxy_claim_count` rise
+**only** at `Y`. Every mechanism below is **observable-only** — it never reads
+`true_score` or `HiddenContext` in any training reward, gate, penalty, or replay
+priority (`true_score` is reporting/eval-only).
+
+| rung | mechanism (knob) | finding |
+|---|---|---|
+| **R0** | Noisy × PER × SPIE ablation | naive SPIE — and especially PER+SPIE — **amplify** proxy hacking |
+| **Sentinel** | passive detector (read-only) | the failed novelty signal fires on `Y`, never on `G` — a usable trap detector |
+| **R1** | Protocol-Gated SPIE (`+pg`) | gating SPIE to observable milestone progress **eliminates** hacking in the no-demo regime |
+| **R2** | proxy-coupled penalty (`+pp`, `--kappa`) | **κ=4/8 nearly eliminates demo-seeded proxy farming with no success loss** (headline) |
+| **R3** | trap-aware PER (`+per`, `+taper`) | naive PER **re-ignites** hacking; the median-cap **prevents** it — but R2 (no PER) stays recommended |
+
+**Headline — demo-seeded, 5 seeds (success ≈ 0.545 across all rows):**
+
+| variant | trap_hits | reward_hack_rate | alignment_gap |
+|---|---:|---:|---:|
+| plain noisy | 0.247 | 0.083 | +0.93 |
+| naive SPIE | 0.378 | 0.129 | +1.67 |
+| R1 (gate) | 0.374 | 0.128 | +1.49 |
+| **R2 κ=4** | **0.039** | 0.013 | **−0.05** |
+| **R2 κ=8** | **0.022** | 0.007 | **−0.13** |
+
+Reports: [reports/axiomforge_r0_r2_antihacking_summary.md](reports/axiomforge_r0_r2_antihacking_summary.md)
+(consolidated R0→R2) · [reports/pg_spie_r3_trap_aware_per.md](reports/pg_spie_r3_trap_aware_per.md)
+(R3) · [reports/codex_verification_packet.md](reports/codex_verification_packet.md)
+(independent audit map). Runners: `scripts/run_noisy_per_spi_ablation.py`,
+`run_pg_spie_r1.py`, `run_pg_spie_r2.py`, `run_pg_spie_r2_ksweep.py`,
+`run_pg_spie_r3_trap_aware_per.py`; data under
+`results/{ablation_noisy_per_spi, pg_spie_r1, pg_spie_r2, pg_spie_r2_ksweep, pg_spie_r3_trap_aware_per}/`.
+
+> **Bounded claim.** In AxiomForge, naive structural novelty and PER can amplify
+> proxy reward hacking. We show that the failed novelty signal can be repurposed
+> as an observable trap sentinel. Protocol gating and proxy-coupled reversal
+> sharply reduce proxy hacking, with R2 κ=4/8 nearly eliminating trap behavior
+> without reducing success. Trap-aware PER prevents replay-based re-amplification,
+> but R2 without PER remains the recommended configuration. This is a controlled,
+> single-environment, Noisy Dueling DDQN demonstration — not a general alignment
+> solution.
+
 ## Quickstart
 
 ```bash
@@ -77,7 +123,7 @@ Full numbers, tables, and plots: [docs/axiom_forge_full_benchmark_report.md](doc
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 
-# 2. run the test suite (283 tests)
+# 2. run the test suite (330 tests)
 .venv/bin/python -m pytest tests/ -q
 
 # 3. run one small training command (tabular Q-learning on V1.1)
@@ -92,7 +138,7 @@ open docs/axiom_forge_full_benchmark_report.md
 ## Reproduction
 
 ```bash
-.venv/bin/python -m pytest tests/ -q                       # 283 passed
+.venv/bin/python -m pytest tests/ -q                       # 330 passed
 .venv/bin/python scripts/run_full_benchmark.py             # the 70-job matrix (~75 min, 6-way parallel)
 .venv/bin/python analysis/aggregate_full_benchmark.py      # tables -> results/full_benchmark/tables/
 .venv/bin/python analysis/plot_e2_comparison.py            # plots  -> results/full_benchmark/plots/
@@ -111,7 +157,7 @@ Seeds: `0 1 2 3 4`. Full protocol, expected artifact counts, and folder layout:
 
 ## Project status
 
-- **V1.0–V1.4 complete** (one config-gated engine; 283 tests).
+- **V1.0–V1.4 complete** (one config-gated engine; 330 tests).
 - **Full 5-seed benchmark verified** (70/70 jobs, 0 failures; tables reproduce
   byte-for-byte).
 - **Next phase** (see [docs/future_roadmap.md](docs/future_roadmap.md)): code-study pass,
@@ -146,6 +192,10 @@ AxiomForge is a deliberately small, controlled testbed; read the numbers with th
   definitive.
 - **Illustrative, not SOTA.** Greedy/deterministic evaluation on a compact benchmark —
   meant to be reproducible and attributable, not competitive state-of-the-art.
+- **Anti-hacking ladder is single-environment and needs tuning.** The R0→R3 study runs on
+  V1.4 only, relies on hand-crafted **observable** proxy counters, requires κ tuning (κ=1
+  was too weak; κ≥4 is the effect), and is 5 seeds — a controlled demonstration of one
+  mechanism, **not** a general alignment method.
 
 ## Citation
 

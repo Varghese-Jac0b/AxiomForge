@@ -261,6 +261,8 @@ class ReplayBuffer:
         self.rewards = np.zeros(capacity, dtype=np.float32)
         self.dones = np.zeros(capacity, dtype=np.float32)  # terminated only
         self.is_demo = np.zeros(capacity, dtype=bool)
+        # R3: observable trap flag per slot (proxy_attempt/claim increment).
+        self.is_trap = np.zeros(capacity, dtype=bool)
         self.n_demo = 0
         self._agent_pos = demo_capacity
         self._agent_filled = 0
@@ -268,25 +270,27 @@ class ReplayBuffer:
     def __len__(self) -> int:
         return self.n_demo + self._agent_filled
 
-    def _write(self, index, state, action, reward, next_state, done, demo):
+    def _write(self, index, state, action, reward, next_state, done, demo,
+               trap=False):
         self.obs[index] = state
         self.actions[index] = action
         self.rewards[index] = reward
         self.next_obs[index] = next_state
         self.dones[index] = float(done)
         self.is_demo[index] = demo
+        self.is_trap[index] = trap
         return index
 
     def add_demo(self, state, action, reward, next_state, done) -> int:
         assert self.n_demo < self.demo_capacity, "demo region full"
         index = self._write(self.n_demo, state, action, reward, next_state,
-                            done, True)
+                            done, True, trap=False)  # demos are never traps
         self.n_demo += 1
         return index
 
-    def add(self, state, action, reward, next_state, done) -> int:
+    def add(self, state, action, reward, next_state, done, trap=False) -> int:
         index = self._write(self._agent_pos, state, action, reward,
-                            next_state, done, False)
+                            next_state, done, False, trap=trap)
         self._agent_pos += 1
         if self._agent_pos >= self.capacity:
             self._agent_pos = self.demo_capacity
@@ -370,22 +374,42 @@ class PrioritizedReplayBuffer(ReplayBuffer):
     epsilon_d), which keeps demonstrations from fading out of replay."""
 
     def __init__(self, capacity, obs_dim, demo_capacity=0, *,
-                 alpha=0.6, priority_eps=1e-3, demo_priority_bonus=0.3):
+                 alpha=0.6, priority_eps=1e-3, demo_priority_bonus=0.3,
+                 trap_aware=False):
         super().__init__(capacity, obs_dim, demo_capacity)
         self.alpha = alpha
         self.priority_eps = priority_eps
         self.demo_priority_bonus = demo_priority_bonus
         self.tree = SumTree(capacity)
         self.max_priority = 1.0
+        # R3 trap-aware PER: when on, a transition flagged as an observable
+        # proxy step has its priority HARD-CAPPED at the running batch median
+        # (at insertion and on every refresh), so high-TD-error trap
+        # transitions cannot dominate replay. Off => ordinary PER.
+        self.trap_aware = trap_aware
+        self._median_priority = 1.0       # running batch median (cap value)
+        # diagnostics (cumulative; observable-only, never gradient-affecting)
+        self.stat_capped = 0
+        self.stat_trap_sampled = 0
+        self.stat_nontrap_sampled = 0
+        self._trap_prio_sum = 0.0
+        self._trap_prio_n = 0
+        self._nontrap_prio_sum = 0.0
+        self._nontrap_prio_n = 0
 
     def add_demo(self, *args) -> int:
         index = super().add_demo(*args)
         self.tree.update(index, self.max_priority)
         return index
 
-    def add(self, *args) -> int:
-        index = super().add(*args)
-        self.tree.update(index, self.max_priority)
+    def add(self, state, action, reward, next_state, done, trap=False) -> int:
+        index = super().add(state, action, reward, next_state, done, trap=trap)
+        # new transitions normally enter at max priority; a trap transition
+        # under trap-aware mode instead enters capped at the running median.
+        init = self.max_priority
+        if self.trap_aware and trap:
+            init = min(self.max_priority, self._median_priority)
+        self.tree.update(index, init)
         return index
 
     def sample(self, batch_size, rng, demo_fraction=0.0, beta=0.4):
@@ -399,6 +423,10 @@ class PrioritizedReplayBuffer(ReplayBuffer):
             mass = (i + rng.random()) * segment
             indices[i] = self.tree.find(min(mass, total - 1e-9))
         priorities = np.array([self.tree.get(i) for i in indices])
+        # diagnostic: how often trap vs non-trap transitions are replayed
+        tmask = self.is_trap[indices]
+        self.stat_trap_sampled += int(tmask.sum())
+        self.stat_nontrap_sampled += int((~tmask).sum())
         probs = priorities / total
         size = len(self)
         weights = (size * probs) ** (-beta)
@@ -408,9 +436,40 @@ class PrioritizedReplayBuffer(ReplayBuffer):
     def update_priorities(self, indices: np.ndarray, td_abs: np.ndarray):
         bonus = self.demo_priority_bonus * self.is_demo[indices]
         priorities = (np.abs(td_abs) + self.priority_eps + bonus) ** self.alpha
+        # running batch median = the cap value (tracked even when cap is off)
+        batch_median = float(np.median(priorities))
+        self._median_priority = batch_median
+        tmask = self.is_trap[indices]
+        if self.trap_aware and tmask.any():
+            capped = tmask & (priorities > batch_median)
+            self.stat_capped += int(capped.sum())
+            priorities = np.where(tmask, np.minimum(priorities, batch_median),
+                                  priorities)
+        # diagnostic: mean assigned priority for trap vs non-trap transitions
+        self._trap_prio_sum += float(priorities[tmask].sum())
+        self._trap_prio_n += int(tmask.sum())
+        self._nontrap_prio_sum += float(priorities[~tmask].sum())
+        self._nontrap_prio_n += int((~tmask).sum())
         for index, priority in zip(indices, priorities):
             self.tree.update(int(index), float(priority))
             self.max_priority = max(self.max_priority, float(priority))
+
+    def per_stats(self) -> dict:
+        """Cumulative trap/non-trap replay + priority diagnostics."""
+        n_samp = self.stat_trap_sampled + self.stat_nontrap_sampled
+        return {
+            "mean_trap_priority": (self._trap_prio_sum / self._trap_prio_n
+                                   if self._trap_prio_n else 0.0),
+            "mean_nontrap_priority": (self._nontrap_prio_sum
+                                      / self._nontrap_prio_n
+                                      if self._nontrap_prio_n else 0.0),
+            "trap_replay_ratio": (self.stat_trap_sampled / n_samp
+                                  if n_samp else 0.0),
+            "n_capped_trap": self.stat_capped,
+            "cap_median_value": self._median_priority,
+            "trap_sampled": self.stat_trap_sampled,
+            "nontrap_sampled": self.stat_nontrap_sampled,
+        }
 
 
 # ---------------------------------------------------------------------
@@ -432,7 +491,7 @@ class DQNAgent:
     def __init__(
         self, obs_dim: int, num_actions: int, *,
         double: bool = False, dueling: bool = False, per: bool = False,
-        noisy: bool = False,
+        noisy: bool = False, trap_aware: bool = False,
         gamma: float = 0.99, lr: float = 5e-4,
         buffer_capacity: int = 100_000, demo_capacity: int = 0,
         batch_size: int = 64, target_update_interval: int = 1000,
@@ -474,11 +533,16 @@ class DQNAgent:
         if per:
             self.buffer: ReplayBuffer = PrioritizedReplayBuffer(
                 buffer_capacity, obs_dim, demo_capacity, alpha=per_alpha,
+                trap_aware=trap_aware,
             )
         else:
             self.buffer = ReplayBuffer(buffer_capacity, obs_dim,
                                        demo_capacity)
         self.learn_steps = 0
+        # Instrumentation only (read by ablation harnesses): mean |TD error|
+        # of the most recent gradient batch. None until the first real update.
+        # Never used by the learning math, so it cannot change behaviour.
+        self.last_td_abs_mean: float | None = None
 
     # ---------------- acting ----------------
 
@@ -502,8 +566,9 @@ class DQNAgent:
 
     # ---------------- storing ----------------
 
-    def store(self, state, action, reward, next_state, terminated):
-        self.buffer.add(state, action, reward, next_state, terminated)
+    def store(self, state, action, reward, next_state, terminated, trap=False):
+        self.buffer.add(state, action, reward, next_state, terminated,
+                        trap=trap)
 
     def store_demo(self, state, action, reward, next_state, terminated):
         self.buffer.add_demo(state, action, reward, next_state, terminated)
@@ -556,6 +621,9 @@ class DQNAgent:
         q_all = self.online_net(obs)
         q_sa = q_all.gather(1, actions.unsqueeze(1)).squeeze(1)
         td_errors = targets - q_sa
+        # Instrumentation side-effect (does not feed the loss): expose the
+        # batch mean |TD error| so PER ablations can log priority pressure.
+        self.last_td_abs_mean = float(td_errors.detach().abs().mean().item())
 
         td_loss = (weights_t * nn.functional.smooth_l1_loss(
             q_sa, targets, reduction="none")).mean()
