@@ -47,7 +47,11 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from agents.dqn_axiom_forge import DQNAgent, make_obs_encoder
-from agents.spie_q_agent import SuccessorPredecessorTables, make_abstraction
+from agents.spie_q_agent import (
+    SuccessorPredecessorTables,
+    make_abstraction,
+    milestone_abstraction,
+)
 from environments.axiom_forge_configs import (
     held_out_config_ids,
     make_v1_1_config,
@@ -95,6 +99,27 @@ DEEP_ALGOS = {
     "spie_dueling_dqn":             dict(double=False, dueling=True,  per=False, noisy=False, spie=True),
     "spie_dueling_ddqn_per":        dict(double=True,  dueling=True,  per=True,  noisy=False, spie=True),
     "spie_noisy_dueling_ddqn_per":  dict(double=True,  dueling=True,  per=True,  noisy=True,  spie=True),
+    # No-PER noisy siblings — the missing cells for the Noisy x PER x SPIE
+    # ablation (scripts/run_noisy_per_spi_ablation.py). Same double+dueling+
+    # noisy backbone as the two *_per rows above, with PER turned OFF.
+    "noisy_dueling_ddqn":           dict(double=True,  dueling=True,  per=False, noisy=True,  spie=False),
+    "spie_noisy_dueling_ddqn":      dict(double=True,  dueling=True,  per=False, noisy=True,  spie=True),
+    # R1: Protocol-Gated SPIE (scripts/run_pg_spie_r1.py). Identical to
+    # spie_noisy_dueling_ddqn, plus one knob `pg`: the SPIE intrinsic is kept
+    # ONLY on observable milestone-progress transitions and suppressed (zeroed)
+    # on neutral / proxy-claim steps. No penalty (R2), no PER (R3), no PSFA.
+    "pg_spie_noisy_dueling_ddqn":   dict(double=True,  dueling=True,  per=False, noisy=True,  spie=True, pg=True),
+    # R2: PG-SPIE + proxy-coupled penalty (scripts/run_pg_spie_r2.py). Same gated
+    # SPIE as R1, plus one knob: on proxy-claim steps the bonus is turned into a
+    # NEGATIVE response (-kappa * bonus) instead of merely suppressed. No PER,
+    # no PSFA. kappa is set via --kappa.
+    "pg_spie_r2_noisy_dueling_ddqn": dict(double=True, dueling=True, per=False, noisy=True, spie=True, pg=True, pp=True),
+    # R3 (scripts/run_pg_spie_r3_trap_aware_per.py): re-introduce PER on top of
+    # R2. `_per` = naive PER (re-ignition test); `_taper_..._per` = trap-aware
+    # PER (priority of observable proxy transitions hard-capped at the batch
+    # median). One new knob: taper. No PSFA, no env change.
+    "pg_spie_r2_noisy_dueling_ddqn_per":       dict(double=True, dueling=True, per=True, noisy=True, spie=True, pg=True, pp=True),
+    "pg_spie_r2_taper_noisy_dueling_ddqn_per": dict(double=True, dueling=True, per=True, noisy=True, spie=True, pg=True, pp=True, taper=True),
 }
 ALL_ALGOS = ALGOS + tuple(DEEP_ALGOS)
 
@@ -349,14 +374,66 @@ def train_seed(version, algo, seed, args):
 # ---------------------------------------------------------------------
 
 
-def train_seed_deep(version, algo, seed, args):
+def protocol_gate(prev_obs, obs) -> str:
+    """R1 Protocol-Gated SPIE decision (OBSERVABLE-ONLY; touches no grader field).
+
+    Returns one of:
+      'proxy'   - a proxy_attempt/claim counter increased -> SUPPRESS the bonus
+      'advance' - observable milestone progress increased  -> ALLOW the bonus
+      'neutral' - neither happened                         -> SUPPRESS the bonus
+
+    Proxy takes precedence over advance (they cannot co-occur in one step - the
+    proxy tile and the protocol stations are different tiles - but the rule is
+    explicit). Milestone progress is milestone_abstraction(obs)[3], a MONOTONE
+    count of protocol milestones read/achieved, computed from the observation
+    only (manifest/archive/diagnostics read + sample present/refined/analyzed).
+    Because it is monotone, 'advance' fires at most once per milestone, so the
+    gate cannot be farmed."""
+    if (int(obs["proxy_attempt_count"]) > int(prev_obs["proxy_attempt_count"])
+            or int(obs["proxy_claim_count"])
+            > int(prev_obs["proxy_claim_count"])):
+        return "proxy"
+    if milestone_abstraction(obs)[3] > milestone_abstraction(prev_obs)[3]:
+        return "advance"
+    return "neutral"
+
+
+def gated_intrinsic(decision, intrinsic, *, proxy_penalty_enabled, kappa):
+    """Map a gate decision + raw SPIE bonus to the value actually added to the
+    training reward, returning (final, allowed, suppressed, penalty):
+
+      advance -> keep the bonus            (allowed)
+      neutral -> suppress to 0             (suppressed)
+      proxy   -> R1: suppress to 0         (suppressed)
+                 R2 (proxy_penalty_enabled): return -kappa*bonus  (penalty>=0)
+
+    Pure and deterministic; with proxy_penalty_enabled=False this reproduces the
+    R1 behaviour exactly (proxy is just suppressed)."""
+    if decision == "advance":
+        return intrinsic, intrinsic, 0.0, 0.0
+    if decision == "proxy" and proxy_penalty_enabled:
+        penalty = kappa * intrinsic
+        return -penalty, 0.0, 0.0, penalty
+    return 0.0, 0.0, intrinsic, 0.0
+
+
+def train_seed_deep(version, algo, seed, args, metrics_sink=None):
     """Deep training path: one configurable DQNAgent (double/dueling/per/
     noisy) plus an optional driver-level SPIE intrinsic bonus. Mirrors the
     tabular train_seed contract (same return tuple, same make_episode_row
     schema, same train/held-out greedy evaluation). The intrinsic bonus is
     added ONLY to the reward stored in replay - episode_return logs the
-    extrinsic return, and greedy evaluation never sees it."""
+    extrinsic return, and greedy evaluation never sees it.
+
+    `metrics_sink`, when a list is passed, receives one dict per episode with
+    the two signals make_episode_row cannot see (they only exist inside the
+    train loop): the SPIE intrinsic contribution and the PER TD-error
+    magnitude. It is opt-in instrumentation for the Noisy x PER x SPIE
+    ablation; leaving it None reproduces the verified driver exactly."""
     switches = DEEP_ALGOS[algo]
+    gate_enabled = switches.get("pg", False)   # R1 Protocol-Gated SPIE
+    proxy_penalty_enabled = switches.get("pp", False)  # R2 proxy-coupled penalty
+    kappa = getattr(args, "kappa", 1.0)        # R2 penalty coefficient
     factory, _ = VERSIONS[version]
     cfg = factory(seed=seed, config_id=0)
     if args.shaping:
@@ -380,6 +457,7 @@ def train_seed_deep(version, algo, seed, args):
         obs_dim, num_actions,
         double=switches["double"], dueling=switches["dueling"],
         per=switches["per"], noisy=switches["noisy"],
+        trap_aware=switches.get("taper", False),   # R3 trap-aware PER
         gamma=args.gamma, lr=args.lr, buffer_capacity=args.buffer_size,
         demo_capacity=demo_capacity, batch_size=args.batch_size,
         target_update_interval=args.target_update,
@@ -413,9 +491,17 @@ def train_seed_deep(version, algo, seed, args):
         episode_return = 0.0           # EXTRINSIC only (CSV column)
         steps = 0
         terminated = truncated = False
+        ep_intrinsic = 0.0             # ALLOWED SPIE bonus summed over episode
+        ep_td = []                     # per-update mean |TD error| (PER probe)
+        ep_gate = {"advance": 0, "neutral": 0, "proxy": 0}  # R1 gate tally
+        ep_allowed = 0.0               # SPIE bonus the gate let through
+        ep_suppressed = 0.0            # SPIE bonus the gate zeroed
+        ep_proxy_penalty = 0.0         # R2: total proxy-coupled penalty (>=0)
+        ep_proxy_penalty_n = 0         # R2: number of penalized proxy steps
 
         while not (terminated or truncated):
             action = agent.act(state, epsilon)
+            prev_obs = obs
             obs, reward, terminated, truncated, info = env.step(action)
             next_state = encode_fn(obs)
             episode_return += reward
@@ -425,20 +511,57 @@ def train_seed_deep(version, algo, seed, args):
             if switches["spie"]:
                 next_abstract = abstract(obs)
                 spie.update(abstract_state, next_abstract)
-                r_train = reward + beta * spie.bonus(
-                    next_abstract, mode=args.mode)
+                intrinsic = beta * spie.bonus(next_abstract, mode=args.mode)
+                if gate_enabled:
+                    decision = protocol_gate(prev_obs, obs)
+                    ep_gate[decision] += 1
+                    intrinsic, allowed, suppressed, penalty = gated_intrinsic(
+                        decision, intrinsic,
+                        proxy_penalty_enabled=proxy_penalty_enabled, kappa=kappa)
+                    ep_allowed += allowed
+                    ep_suppressed += suppressed
+                    ep_proxy_penalty += penalty
+                    if decision == "proxy" and proxy_penalty_enabled:
+                        ep_proxy_penalty_n += 1
+                r_train = reward + intrinsic
                 abstract_state = next_abstract
+                ep_intrinsic += intrinsic
 
             # Store termination only: truncation bootstraps through.
-            agent.store(state, action, r_train, next_state, terminated)
+            # R3: tag the transition with the OBSERVABLE proxy flag (same
+            # signal the gate/sentinel use) so trap-aware PER can cap it.
+            is_trap = (int(obs["proxy_attempt_count"])
+                       > int(prev_obs["proxy_attempt_count"])
+                       or int(obs["proxy_claim_count"])
+                       > int(prev_obs["proxy_claim_count"]))
+            agent.store(state, action, r_train, next_state, terminated,
+                        trap=is_trap)
             if steps % args.train_freq == 0:
-                agent.learn()
+                loss = agent.learn()
+                if metrics_sink is not None and loss is not None:
+                    ep_td.append(agent.last_td_abs_mean)
             state = next_state
 
         rows.append(make_episode_row(
             episode_idx=episode, seed=seed, cfg=cfg,
             episode_return=episode_return, terminated=terminated,
             truncated=truncated, steps=steps, final_obs=obs, info=info))
+        if metrics_sink is not None:
+            metrics_sink.append({
+                "episode": episode,
+                "intrinsic_contribution": ep_intrinsic,
+                "td_abs_mean": float(np.mean(ep_td)) if ep_td else None,
+                "learn_calls": len(ep_td),
+                # R1 gate diagnostics (0 for non-gated variants).
+                "gate_advance": ep_gate["advance"],
+                "gate_neutral": ep_gate["neutral"],
+                "gate_proxy": ep_gate["proxy"],
+                "allowed_intrinsic": ep_allowed,
+                "suppressed_intrinsic": ep_suppressed,
+                # R2 proxy-coupled penalty (0 unless the pp knob is on).
+                "proxy_penalty_total": ep_proxy_penalty,
+                "proxy_penalty_count": ep_proxy_penalty_n,
+            })
         if not switches["noisy"]:
             epsilon = max(args.epsilon_end, epsilon * args.epsilon_decay)
         beta = max(args.beta_end, beta * args.beta_decay)

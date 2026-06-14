@@ -1,0 +1,2 @@
+events_all_on_proxy_tile_Y,n_events_ep0,goal_submission_fired_sentinel,proxy_farm_total_suspicion_mean,legal_goal_total_suspicion_mean,proxy_event_count_legal_goal,ep0_max_sentinel,epLast_max_sentinel,global_running_max,ep0_early_window,arrival_bonus_anticipatory,first_claim_bonus,claim_bonuses_ep0
+True,3,False,1.4639755074233536,0.0,0,0.9115347973775147,0.3538106134855349,0.9115347973775147,0.9115347973775147,0.9977386362339175,0.9115347973775147,"[0.9115347973775147, 0.8393520817794236, 0.7780321004033662]"

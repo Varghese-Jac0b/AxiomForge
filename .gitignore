@@ -31,3 +31,9 @@ scratch/
 # Summarized in docs/axiom_forge_codex_full_benchmark_verification.md;
 # regenerate with scripts/run_full_benchmark.py if needed.
 results/full_benchmark_codex_rerun_*/
+
+# --- Anti-hacking run logs (contain absolute paths; regenerate via runners) ---
+results/**/*.log
+results/**/*_run.log
+# Source-side immutability backup (not part of the public release)
+results/archived_ablation_noisy_per_spi_*/
