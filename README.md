@@ -19,6 +19,49 @@ train / held-out generalization protocol and a dedicated misalignment study.
 
 ---
 
+## Project history & provenance (Mini Research World → AxiomForge)
+
+This project **began as "Mini Research World"** — a simpler 8×8 two-layer symbolic RL
+environment (now archived at
+`Mini_Research_Pre_AxiomForge_Era/environment/mini_world_env.py`). That earlier task was solvable by standard
+value-based / DQN-style agents: tabular SARSA reached ~97% success on it. Through multiple
+research iterations the project then **evolved into AxiomForge**, the richer
+config-gated lab (hidden work-order inference, faults, calibrated reports, and the V1.4
+misalignment traps). **AxiomForge is now the main research artifact**; Mini Research World
+is its ancestor, not its current task.
+
+The Mini Research World-era files are **archived for provenance/history** under
+[`Mini_Research_Pre_AxiomForge_Era/`](Mini_Research_Pre_AxiomForge_Era/) (a self-contained
+legacy island, kept out of the active tree so readers don't mistake it for the current
+pipeline):
+
+- **Legacy environment:** `Mini_Research_Pre_AxiomForge_Era/environment/mini_world_env.py`
+- **Legacy tabular CLIs** (import `mini_world_env` directly):
+  `Mini_Research_Pre_AxiomForge_Era/agents/` — `sarsa_agent.py`, `q_learning_agent.py`,
+  `expected_sarsa_agent.py`, `random_agent.py`
+- **Legacy analysis:** `Mini_Research_Pre_AxiomForge_Era/analysis/` — `multi_seed_eval.py`
+  (confidence-band study) and `compare_tabular_agents.py` (tabular comparison plots)
+- **Legacy results:** `Mini_Research_Pre_AxiomForge_Era/results/` — `sarsa_10k.csv`,
+  `q_learning_10k.csv`, `expected_sarsa_10k.csv` (+ the matching `*_qtable_10k.pkl`),
+  `random_baseline_1k.csv`, `multi_seed/`, and `plots/`
+
+**The verified AxiomForge results are produced entirely by the AxiomForge paths** —
+`environments/axiom_forge_*`, `agents/dqn_axiom_forge.py` · `spie_q_agent.py` ·
+`trap_sentinel.py`, the `scripts/*axiom_forge*` / `run_*` drivers, and their
+`results/{V1.0…V1.4, full_benchmark, ablation_noisy_per_spi, pg_spie_*, r0_r2_summary,
+trap_sentinel_probe}/` outputs. The AxiomForge benchmark and the R0→R3 ladder **do not
+import or depend on** `mini_world_env.py` or the legacy tabular CLIs (the AxiomForge tabular
+algorithms are re-implemented inside `scripts/train_*_axiom_forge.py`). Unless a specific
+result path is explicitly documented as coming from the legacy env, assume it does not.
+
+The **current AxiomForge contribution** is the hidden-score / proxy-reward / reward-hacking
+setup (visible reward vs evaluator-only `true_score`, `alignment_gap`, proxy trap `Y`,
+unsafe shortcut `X`, true goal `G`) together with the **R0→R3 anti-reward-hacking ladder**.
+A separate **AxiomForge-LM** direction (an observable-only oversight benchmark for language
+agents) is planned for a later phase and is not part of this release.
+
+---
+
 ## Environment ladder
 
 | Version | What it adds | Research question |
@@ -101,8 +144,7 @@ priority (`true_score` is reporting/eval-only).
 
 Reports: [reports/axiomforge_r0_r2_antihacking_summary.md](reports/axiomforge_r0_r2_antihacking_summary.md)
 (consolidated R0→R2) · [reports/pg_spie_r3_trap_aware_per.md](reports/pg_spie_r3_trap_aware_per.md)
-(R3) · [reports/codex_verification_packet.md](reports/codex_verification_packet.md)
-(independent audit map). Runners: `scripts/run_noisy_per_spi_ablation.py`,
+(R3). Runners: `scripts/run_noisy_per_spi_ablation.py`,
 `run_pg_spie_r1.py`, `run_pg_spie_r2.py`, `run_pg_spie_r2_ksweep.py`,
 `run_pg_spie_r3_trap_aware_per.py`; data under
 `results/{ablation_noisy_per_spi, pg_spie_r1, pg_spie_r2, pg_spie_r2_ksweep, pg_spie_r3_trap_aware_per}/`.
@@ -152,8 +194,9 @@ Seeds: `0 1 2 3 4`. Full protocol, expected artifact counts, and folder layout:
 - `results/full_benchmark/` — the verified 5-seed benchmark: 70 per-cell `summary.csv`,
   350 per-seed CSVs, 70 generalization curves, 14 E2 plots, aggregate `tables/`, and
   comparison `plots/`.
-- `results/V1.0/`, `results/V1.1…V1.4/`, `results/multi_seed/`, `results/plots/` — earlier
-  single-config and smoke-scale runs backing the reference and smoke reports.
+- `results/V1.0/`, `results/V1.1…V1.4/` — earlier single-config and smoke-scale AxiomForge
+  runs backing the reference and smoke reports. (The legacy Mini Research World `multi_seed/`
+  and `plots/` outputs now live under `Mini_Research_Pre_AxiomForge_Era/results/`.)
 
 ## Project status
 
