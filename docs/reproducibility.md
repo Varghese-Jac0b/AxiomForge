@@ -1,17 +1,19 @@
 # Reproducibility
 
 ## Environment
-- Python 3.12, PyTorch 2.12 (CPU), Gymnasium, NumPy, pandas, matplotlib.
+- Python 3.12 (or newer), PyTorch 2.12 (CPU), Gymnasium, NumPy, pandas, matplotlib;
+  `pytest` for the test suite.
 - The full 5-seed benchmark was run on an Apple M4 Max (16 cores, 128 GB), CPU only,
   `OMP_NUM_THREADS=2` per process, 6-way process parallelism. Wall time ≈ 75 min.
 - Install: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`
-  (exact pins in `requirements-lock.txt`).
+  (exact runtime pins in `requirements-lock.txt`; `pytest` is installed via
+  `requirements.txt`).
 
 ## Commands
 
 ```bash
 # 1. tests (must be green before trusting any run)
-.venv/bin/python -m pytest tests/ -q                      # expect: 283 passed
+.venv/bin/python -m pytest tests/ -q                      # expect: 330 passed
 
 # 2. full benchmark matrix (70 jobs) — ~75 min, 6-way parallel
 .venv/bin/python scripts/run_full_benchmark.py            # writes results/full_benchmark/...
@@ -63,8 +65,12 @@ results/
     tables/             generalization.csv, sample_efficiency.csv, misalignment_e2.csv
     plots/              e2_alignment_gap.png, e2_hacking_rate.png, e2_return_vs_truescore.png
     logs/               <job>.log, full_progress.log
-  V1.0/ V1.1/ ... multi_seed/ plots/   # earlier single-config + smoke-scale runs
+  V1.0/ V1.1/ ... V1.4/               # earlier single-config + smoke-scale runs
+  ablation_noisy_per_spi/ pg_spie_*/ trap_sentinel_probe/ r0_r2_summary/
+                                      # R0–R3 anti-reward-hacking ladder (see reports/)
 ```
+(The legacy Mini Research World `multi_seed/` and `plots/` outputs are archived under
+`Mini_Research_Pre_AxiomForge_Era/results/`, not active AxiomForge results.)
 
 ## Independent reproduction
 The benchmark was independently re-run; the aggregate tables matched **byte-for-byte**.

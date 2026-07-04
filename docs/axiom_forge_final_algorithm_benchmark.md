@@ -18,6 +18,8 @@ perceptual aliasing → unsolvable by a memoryless agent). V1.0 behaviour is unc
 ```
 .venv/bin/python -m pytest tests/ -q      # 283 passing (as of this writing)
 ```
+*(Historical count. The later R0–R3 anti-reward-hacking ladder tests bring the current
+suite to 330 passing.)*
 Deep additions are covered by `tests/test_axiom_forge_deep.py` (17 tests): NoisyLinear
 behaviour, deterministic greedy eval, the deep driver path, the switch table, and the
 SPIE-intrinsic separation invariants.
